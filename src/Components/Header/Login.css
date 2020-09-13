@@ -1,0 +1,10 @@
+.login{
+    display: flex;
+}
+.login-btn{
+    width: 80px;
+    height: 35px;
+    margin: auto;
+    padding: 0;
+    border: 1px solid black;
+}

@@ -1,26 +1,31 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { Component } from 'react';
 import "./App.css";
+import Searchbar from './Components/Header/Searchbar';
+import Login from './Components/Header/Login';
+import Toprating from './Components/Toprating';
+import theater from './theater.svg';
+import menu from './menu.svg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          move <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component {
+
+  render(){
+     return (
+      <React.Fragment>
+    <div className='main-container'>
+      <div className="App">
+        <div className='img-container'>
+          <img className='theater' src={theater} alt='theater'/>
+          <img className='menu' src={menu} alt='menu'/>
+        </div>
+        <Searchbar />
+        <Login />
+      </div>
     </div>
+      <div>
+        <Toprating />
+      </div>
+      </React.Fragment>
   );
 }
-
+}
 export default App;

@@ -1,0 +1,8 @@
+.top-rating-container{
+    border: 1px solid red;
+    background-color: burlywood;
+    width: 35%;
+    display: flex;
+    margin-left: 100px;
+    height: 500px;
+}

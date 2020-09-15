@@ -3,71 +3,60 @@ import './Toprating.css'
 
 class Toprating extends Component {
 
-    constructor(){
-        super();
-        this.state = {
-            data: false,
-            item: null
-        }
-    }
+
+      state = {
+          error: null,
+          isLoaded: false,
+          items: []
+        };
+   
 
     componentDidMount(){
-        fetch('https://movies-app-siit.herokuapp.com/movies?take=10')
-            .then( res => res.json())
-            .then(json =>{
-                console.log(json)
-            this.setState({item: json, data: true })
-            })
+        fetch('https://movies-app-siit.herokuapp.com/movies?&take=3')
+        .then(res => res.json())
+        .then(
+          (result) => {
+            console.log(result)
+            this.setState({
+              isLoaded: true,
+              items: result.results
+            });
+          },
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+          }
+        )
     }
   render(){
 
-        let item= this.state;
-
-        console.log(item)
-        return(
+    const { error, isLoaded, items } = this.state;
+    if (error) {
+      return <div>Error: dsfds</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
         <div className='top-rating-container'>
-             {/* <div>{this.state.item.results.Country}</div> */}
-         </div>
-        )
-
-    } 
-
+          <h1 className='title-container'>Top Rating Movies</h1>
+          {items.map(item => (
+            <div className='render-movies'>
+              <img src={item.Poster} alt='poster' className='poster'/>
+              <p className='movie-desc' key={item._id}>
+                 Title: {item.Title} <br/>
+                 Genre: {item.Genre} <br/>
+                 Year: {item.Year} <br/>
+                 Language: {item.Language} <br/>
+                 ImdbRating: {item.imdbRating} 
+              </p>
+            </div>
+          ))}
+        </div>
+      );
+    }
+  }
 }
 
-
-
-
-export default Toprating;   
-
-
-// render() {
-//         if (this.state.data) {
-//           return <div>loading...</div>;
-//         }
-    
-//         if (!this.state.item) {
-//           return <div>didn't get a person</div>;
-//         }
-    
-//         return (
-//           <div>
-//             <div>{this.state.item.results.Title}</div>
-//             {/* <div>{this.state.item.name.first}</div>
-//             <div>{this.state.item.name.last}</div>
-//             <img src={this.state.item.picture.large} alt='poster' /> */}
-//           </div>
-//         );
-//       }
-
- 
-
-
-
-
-    //   handleGetAllMovies = () => {
-    //     fetch("https://movies-app-siit.herokuapp.com/movies?take=99999999")
-    //       .then((res) => res.json())
-    //       .then((json) => {
-    //         console.log(json);
-    //       });
-    //   };
+export default Toprating;

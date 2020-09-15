@@ -1,6 +1,6 @@
 .main-container {
   width: 100%;
-  background-color: aqua;
+  background-color: rgb(90, 110, 0);
   display: flex;
   justify-content: space-around;
 }
@@ -24,4 +24,8 @@
 .img-container{
   display: flex;
   width: 30%;
+}
+.movies-container{
+  display: flex;
+  width: 100%;
 }

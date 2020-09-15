@@ -3,6 +3,7 @@ import "./App.css";
 import Searchbar from './Components/Header/Searchbar';
 import Login from './Components/Header/Login';
 import Toprating from './Components/Toprating';
+import Comingsoon from './Components/Comingsoon';
 import theater from './theater.svg';
 import menu from './menu.svg';
 
@@ -21,8 +22,9 @@ class App extends Component {
         <Login />
       </div>
     </div>
-      <div>
+      <div className='movies-container'>
         <Toprating />
+        <Comingsoon />
       </div>
       </React.Fragment>
   );

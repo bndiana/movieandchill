@@ -2,3 +2,18 @@
     width: 100%;
     height: 100%;
 }
+.render-movies-coming-soon{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.poster-coming-soon{
+    width: 45%;
+    height: 400px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.two-movies{
+    display: flex;
+}

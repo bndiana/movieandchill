@@ -7,41 +7,46 @@ import Previous from './previous.png'
 import Next from './next.png'
 
 class  Comingsoon extends Component{
-        
 
-    state = {
-        index: 0,
-        x: 0
-    }
+state = {
+    index: 0,
+    x: 0,
+    disable: false
+}
 
-    setX = (x) => {
-        this.setState({x});
-    }
+setX = (x) => {
+    this.setState({x});
+}
 
-    handleLeft = () =>{
-        this.state.x === 0 ? this.setX(-100 * (2 - 1)) : this.setX( this.state.x + 100);
-    }
+handleLeft = () =>{
+    this.state.x === 0 ? this.setX(-100 * (2 - 1)) : this.setX( this.state.x + 100);
+    this.goToNextPageLeft()
+}
 
-    handleRight = () =>{
-        this.state.x === -100 * (2 - 1) ? this.setX(0) : this.setX( this.state.x - 100);
-        this.goToNextPage();
-    }
+handleRight = () =>{
+    this.state.x === -100 * (2 - 1) ? this.setX(0) : this.setX( this.state.x - 100);
+    this.goToNextPageRight();
+}
 
-    goToNextPage = () => {
-        this.setState({index: this.state.index + 3})
-    }
+goToNextPageRight = () => {
+    this.setState({index: this.state.index + 1})
+}
 
-    render(){
-        return (
-            <div className='coming-soon-container'>
-                <div className='slider'>
+goToNextPageLeft = () => {
+    this.setState({index: this.state.index - 1})  
+}
+
+render(){
+    return (
+        <div className='coming-soon-container'>
+            <div className='slider'>
                 <ImgComponent index ={this.state.index}/>
-                <button id='goLeft' onClick={this.handleLeft}><img src={Previous} style={{width: '30px'}}/></button>
-                <button id='goRight' onClick={this.handleRight}><img src={Next} style={{width: '30px'}}/></button>
-                </div>
+                <button id='goLeft' onClick={this.handleLeft}><img src={Previous} className='arrows' style={{width: '30px'}}/></button>
+                <button id='goRight' onClick={this.handleRight}><img src={Next} className='arrows' style={{width: '30px'}}/></button>
             </div>
+        </div>
         )
-        }
-
     }
+
+}
 export default  Comingsoon;

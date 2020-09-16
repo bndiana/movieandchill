@@ -42,7 +42,7 @@ class Toprating extends Component {
         <div className='top-rating-container'>
           <h1 className='title-container'>Top Rating Movies</h1>
           {items.map(item => (
-            <div className='render-movies'>
+            <div className='render-movies' key={item._id}>
               <img src={item.Poster} alt='poster' className='poster'/>
               <p className='movie-desc' key={item._id}>
                  Title: {item.Title} <br/>

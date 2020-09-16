@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 import './ImgComponent.scss';
 
-// export default function ImgComponent({src}) {
-//     return (
-//         <div className='img-slide'>
-//             <img  src={src} alt='slide-img' className='img-slide'/>
-//         </div>
-//     )
-// }
-
 class ImgComponent extends Component {
 
 
@@ -38,8 +30,8 @@ class ImgComponent extends Component {
         }
       )
   }
-render(){
 
+render(){
   const { error, isLoaded, items } = this.state;
   if (error) {
     return <div>Error: dsfds</div>;
@@ -50,12 +42,16 @@ render(){
     return (
       <div className='coming-soon-movie-container'>
         {items.slice(this.props.index, this.props.index + 3).map(item => (
-          <div className='render-movies' key={item._id}>
-            <img src={item.Poster} alt='poster' className='poster'/>
-            <p className='movie-desc' key={item._id}>
-               Title: {item.Title} <br/>
-               Genre: {item.Genre} 
-            </p>
+          <div className='render-movies-coming-soon' key={item._id}>
+            <div className='two-movies'>
+              <img src={item.Poster} alt='poster' className='poster-coming-soon'/>
+            </div>
+            <div>
+              <p className='desc-movie' key={item._id}>
+                Title: {item.Title} <br/>
+                Genre: {item.Genre} 
+              </p>
+            </div>
           </div>
         ))}
       </div>

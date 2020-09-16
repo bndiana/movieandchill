@@ -1,26 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import MovieDetails from "./components/MovieDetails/MovieDetails";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          change <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <MovieDetails id={"5f5f86c4c9711b00220c726a"} />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -10,8 +10,7 @@ class  Comingsoon extends Component{
 
 state = {
     index: 0,
-    x: 0,
-    disable: false
+    x: 0
 }
 
 setX = (x) => {
@@ -29,11 +28,19 @@ handleRight = () =>{
 }
 
 goToNextPageRight = () => {
-    this.setState({index: this.state.index + 1})
+    if(this.state.index === 4){
+        this.setState({index: this.state.index === 0}) 
+    } else {
+         this.setState({index: this.state.index + 1})
+    }
 }
 
 goToNextPageLeft = () => {
-    this.setState({index: this.state.index - 1})  
+    if(this.state.index <= 0 && !false){
+        this.setState({index: this.state.index === 4}) 
+    } else {
+         this.setState({index: this.state.index - 1})
+    }  
 }
 
 render(){
@@ -41,8 +48,8 @@ render(){
         <div className='coming-soon-container'>
             <div className='slider'>
                 <ImgComponent index ={this.state.index}/>
-                <button id='goLeft' onClick={this.handleLeft}><img src={Previous} className='arrows' style={{width: '30px'}}/></button>
-                <button id='goRight' onClick={this.handleRight}><img src={Next} className='arrows' style={{width: '30px'}}/></button>
+                <button id='goLeft' onClick={this.handleLeft}><img src={Previous} className='arrows' style={{width: '30px'}} alt='arrow'/></button>
+                <button id='goRight' onClick={this.handleRight}><img src={Next} className='arrows' style={{width: '30px'}} alt='arrow'/></button>
             </div>
         </div>
         )

@@ -12,7 +12,7 @@ class ImgComponent extends Component {
  
 
   componentDidMount(){
-      fetch('https://movies-app-siit.herokuapp.com/movies?&take=20')
+      fetch('https://movies-app-siit.herokuapp.com/movies?&take=5&skip=3')
       .then(res => res.json())
       .then(
         (result) => {

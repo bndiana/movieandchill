@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import "./App.css";
 import Searchbar from './Components/Header/Searchbar';
 import Login from './Components/Header/Login';
-import Toprating from './Components/Toprating';
-import Comingsoon from './Components/Comingsoon';
+import Toprating from './Components/Main-up-section/Toprating';
+import Comingsoon from './Components/Main-up-section/Comingsoon';
 import theater from './theater.svg';
 import menu from './menu.svg';
 

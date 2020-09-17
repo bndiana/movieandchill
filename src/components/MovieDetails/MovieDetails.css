@@ -1,11 +1,23 @@
+.page-content {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(16, 54, 78, 0.8337710084033614) 52%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
 .movie-detail-page-header {
   display: flex;
   flex-direction: row;
   flex: 1;
+  background-color: rgb(2, 8, 16);
 }
 
 .movie-title {
   margin-left: 10%;
+  color: aliceblue;
 }
 
 .movie-star {
@@ -15,6 +27,7 @@
 .movie-poster {
   justify-content: center;
 }
+
 .movie-characteritics-bar {
   display: flex;
   flex: 1;
@@ -22,9 +35,23 @@
   justify-content: space-between;
   text-align: center;
   margin: 20px;
+  background-color: rgb(2, 0, 36);
+  background: linear-gradient(
+    112deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(16, 54, 78, 0.9639830508474576) 100%
+  );
 }
-.movie-characteritics-bar div {
-  align-items: center;
+
+.movie-characteritics-bar-square {
+  flex: 0.3;
+  text-align: center;
+  color: aliceblue;
+}
+
+.movie-year,
+.movie-rating{
+  border-right: solid 2px aqua;
 }
 
 .movie-numbers {
@@ -51,15 +78,17 @@
 }
 
 .movie-plot {
-  background-color: brown;
+  background-color:  rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(194,215,217,0.8265984195402298) 0%);;
+  border-radius: 5%;
   text-align: center;
   padding: 5px;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 20px;
-  height: 80px;
-  text-orientation: upright;
+  margin-top: 90px;
+  width: 75%;
+  height: 100px;
 }
 
 .movie-more-details {
@@ -68,6 +97,10 @@
   margin-right: auto;
   margin-top: 20px;
   padding: 7px;
+}
+
+.movie-star path {
+  fill: aliceblue;
 }
 
 .movie-star-favorite path {

@@ -3,7 +3,10 @@ import "./MovieDetails.css";
 import { ReactComponent as Star } from "./svgs/star.svg";
 import pencil from "./svgs/pencil.svg";
 import trash from "./svgs/trash.svg";
+import batman from "./svgs/batman.svg";
 import { FavoriteButton } from "../Favorites/FavoriteButton";
+import DeleteButton from "../Delete/DeleteButton";
+import Cookies from "js-cookie";
 
 class MovieDetails extends Component {
   state = {
@@ -46,6 +49,23 @@ class MovieDetails extends Component {
     }
   };
 
+  dummyLogIn = () => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: "victor",
+        password: "victor",
+      }),
+    };
+    fetch("https://movies-app-siit.herokuapp.com/auth/login", requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        Cookies.set("authToken", res.accessToken);
+      
+      });
+  };
+
   render() {
     const { loading, movie, errorMessage } = this.state;
 
@@ -56,64 +76,90 @@ class MovieDetails extends Component {
     } else {
       return (
         <React.Fragment>
-          <div className="movie-detail-page-header movie-detail-page">
-            <div className="movie-detail-page movie-title">
-              <h2>{movie.Title}</h2>
+          <div className="page-content">
+            <div className="movie-detail-page-header movie-detail-page">
+              <div className="movie-detail-page movie-title">
+                {movie.Title && <h2>{movie.Title}</h2>}
+              </div>
+              <div className="movie-detail-page movie-star ">
+                <Star
+                  className={
+                    this.state.isFavorited ? "movie-star-favorite" : ""
+                  }
+                  width="50px"
+                  height="50px"
+                />
+              </div>
             </div>
-            <div className="movie-detail-page movie-star ">
-              <Star
-                className={this.state.isFavorited ? "movie-star-favorite" : ""}
-                width="50px"
-                height="50px"
+
+            <div className="movie-detail-page movie-poster">
+              {movie.Poster && <img src={movie.Poster} alt="nothing" />}
+              <div className="movie-runtime"></div>
+            </div>
+
+            <div className="movie-detail-page movie-characteritics-bar">
+              {movie.Year && (
+                <h3 className="movie-characteritics-bar-square movie-year">
+                  {movie.Year}
+                </h3>
+              )}
+              <div className="movie-characteritics-bar-square movie-numbers">
+                {movie.imdbRating && (
+                  <h3 className="movie-numbers movie-rating">
+                    {movie.imdbRating}
+                  </h3>
+                )}
+                {movie.imbdVotes && (
+                  <h3 className="movie-numbers movie-votes">
+                    {movie.imbdVotes}
+                  </h3>
+                )}
+              </div>
+              {movie.Genre && (
+                <h3 className="movie-characteritics-bar-square movie-genre">
+                  {movie.Genre.split(",").slice(0, 3).join(", ")}
+                </h3>
+              )}
+            </div>
+
+            <div className="movie-detail-page movie-button-bar">
+              <FavoriteButton
+                isFavorite={this.state.isFavorited}
+                checkMovieStorage={this.checkMovieStorage}
+                movieItem={this.state.movie}
               />
+              <button
+                className="movie-button-bar movie-button edit-button"
+                id="edit-button"
+              >
+                <img src={pencil} alt="nothing" />
+              </button>
+              <DeleteButton 
+              idForDelete={this.props.id}/>
+              <button onClick={this.dummyLogIn}>Log in</button>
             </div>
-          </div>
 
-          <div className="movie-detail-page movie-poster">
-            <img src={movie.Poster} alt="nothing" />
-            <div className="movie-runtime"></div>
-          </div>
+            {movie.Plot && (
+              <p className="movie-detail-page movie-plot">{movie.Plot}</p>
+            )}
 
-          <div className="movie-detail-page movie-characteritics-bar">
-            <h3 className="movie-characteritics-bar movie-year">
-              {movie.Year}
-            </h3>
-            <div className="movie-characteritics-bar movie-numbers">
-              <h3 className="movie-numbers movie-rating">{movie.imdbRating}</h3>
-              <div className="movie-numbers movie-votes">{movie.imbdVotes}</div>
+            <div className="movie-detail-page movie-more-details">
+              {movie.Language && (
+                <p className="movie-more-details movie-language">
+                  Language: {movie.Language}
+                </p>
+              )}
+              {movie.Country && (
+                <p className="movie-more-details movie-country">
+                  Country: {movie.Country}
+                </p>
+              )}
+              {movie.Type && (
+                <p className="movie-more-details movie-type">
+                  Type: {movie.Type}
+                </p>
+              )}
             </div>
-            <h3 className="movie-characteritics-bar movie-genre">
-              {movie.Genre.split(",").slice(0, 3).join(", ")}
-            </h3>
-          </div>
-
-          <div className="movie-detail-page movie-button-bar">
-            <FavoriteButton
-              isFavorite={this.state.isFavorited}
-              checkMovieStorage={this.checkMovieStorage}
-              movieItem={this.state.movie}
-            />
-            <button
-              className="movie-button-bar movie-button edit-button"
-              id="edit-button"
-            >
-              <img src={pencil} alt="nothing" />
-            </button>
-            <button className="movie-button-bar movie-button delete-button">
-              <img src={trash} alt="nothing" />
-            </button>
-          </div>
-
-          <p className="movie-detail-page movie-plot">{movie.Plot}</p>
-
-          <div className="movie-detail-page movie-more-details">
-            <p className="movie-more-details movie-language">
-              Language: {movie.Language}
-            </p>
-            <p className="movie-more-details movie-country">
-              Country: {movie.Country}
-            </p>
-            <p className="movie-more-details movie-type">Type: {movie.Type}</p>
           </div>
         </React.Fragment>
       );

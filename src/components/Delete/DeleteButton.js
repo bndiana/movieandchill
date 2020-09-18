@@ -11,14 +11,18 @@ class DeleteButton extends Component {
         "Content-Type": "application/json",
         Accept: "*/*",
       },
-      method: "DELETE",
     };
     fetch(
       `https://movies-app-siit.herokuapp.com/movies/${this.props.idForDelete}`,
       deleteMovie
-    )
-      .then((response) => response.json())
-      .then((res) => {});
+    ).then((res) => {
+      if (res.ok) {
+        //Redirect
+      } else {
+        throw new Error("Something went wrong!")
+      }
+    })
+    .catch((error) => window.alert(error.message));
   };
 
   render() {

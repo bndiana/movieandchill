@@ -6,7 +6,6 @@ import DeleteButton from "../Delete/DeleteButton";
 import Cookies from "js-cookie";
 import { EditButton } from "../Edit/EditButton";
 
-
 class MovieDetails extends Component {
   state = {
     loading: true,

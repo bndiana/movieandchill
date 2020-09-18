@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import "./MovieDetails.css";
 import { ReactComponent as Star } from "./svgs/star.svg";
-import pencil from "./svgs/pencil.svg";
-import trash from "./svgs/trash.svg";
-import batman from "./svgs/batman.svg";
 import { FavoriteButton } from "../Favorites/FavoriteButton";
 import DeleteButton from "../Delete/DeleteButton";
 import Cookies from "js-cookie";
+import { EditButton } from "../Edit/EditButton";
+
 
 class MovieDetails extends Component {
   state = {
@@ -14,6 +13,7 @@ class MovieDetails extends Component {
     movie: null,
     errorMessage: null,
     isFavorited: false,
+    loggedIn: Cookies.get("authToken"),
   };
 
   componentDidMount() {
@@ -62,7 +62,6 @@ class MovieDetails extends Component {
       .then((response) => response.json())
       .then((res) => {
         Cookies.set("authToken", res.accessToken);
-      
       });
   };
 
@@ -81,15 +80,17 @@ class MovieDetails extends Component {
               <div className="movie-detail-page movie-title">
                 {movie.Title && <h2>{movie.Title}</h2>}
               </div>
-              <div className="movie-detail-page movie-star ">
-                <Star
-                  className={
-                    this.state.isFavorited ? "movie-star-favorite" : ""
-                  }
-                  width="50px"
-                  height="50px"
-                />
-              </div>
+              {this.state.loggedIn && (
+                <div className="movie-detail-page movie-star ">
+                  <Star
+                    className={
+                      this.state.isFavorited ? "movie-star-favorite" : ""
+                    }
+                    width="50px"
+                    height="50px"
+                  />
+                </div>
+              )}
             </div>
 
             <div className="movie-detail-page movie-poster">
@@ -122,25 +123,22 @@ class MovieDetails extends Component {
               )}
             </div>
 
-            <div className="movie-detail-page movie-button-bar">
-              <FavoriteButton
-                isFavorite={this.state.isFavorited}
-                checkMovieStorage={this.checkMovieStorage}
-                movieItem={this.state.movie}
-              />
-              <button
-                className="movie-button-bar movie-button edit-button"
-                id="edit-button"
-              >
-                <img src={pencil} alt="nothing" />
-              </button>
-              <DeleteButton 
-              idForDelete={this.props.id}/>
-              <button onClick={this.dummyLogIn}>Log in</button>
-            </div>
+            {this.state.loggedIn && (
+              <div className="movie-detail-page movie-button-bar">
+                <FavoriteButton
+                  isFavorite={this.state.isFavorited}
+                  checkMovieStorage={this.checkMovieStorage}
+                  movieItem={this.state.movie}
+                />
+                <EditButton />
+                <DeleteButton idForDelete={this.props.id} />
+              </div>
+            )}
 
             {movie.Plot && (
-              <p className="movie-detail-page movie-plot">{movie.Plot}</p>
+              <p className="movie-detail-page movie-plot">
+                <button onClick={this.dummyLogIn}>Log in</button> {movie.Plot}
+              </p>
             )}
 
             <div className="movie-detail-page movie-more-details">

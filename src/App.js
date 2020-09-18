@@ -6,7 +6,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <MovieDetails id={"5f6383999367c500224174ba"} />
+        <MovieDetails id={"5f5f86c4c9711b00220c725b"} />
       </div>
     );
   }

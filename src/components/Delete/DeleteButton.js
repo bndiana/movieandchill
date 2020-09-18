@@ -25,7 +25,10 @@ class DeleteButton extends Component {
     return (
       <button
         className="movie-button-bar movie-button delete-button"
-        onClick={this.deleteMovie}
+        onClick={() => {
+          if (window.confirm("Are you sure you want to delete this movie?"))
+            this.deleteMovie();
+        }}
       >
         <Trash width="60px" height="20px" />
       </button>

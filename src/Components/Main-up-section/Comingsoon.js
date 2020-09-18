@@ -36,7 +36,7 @@ goToNextPageRight = () => {
 }
 
 goToNextPageLeft = () => {
-    if(this.state.index <= 0 && !false){
+    if(this.state.index >= 0){
         this.setState({index: this.state.index === 4}) 
     } else {
          this.setState({index: this.state.index - 1})
@@ -46,6 +46,7 @@ goToNextPageLeft = () => {
 render(){
     return (
         <div className='coming-soon-container'>
+            <h1 className='title-coming-soon'>Coming Soon</h1>
             <div className='slider'>
                 <ImgComponent index ={this.state.index}/>
                 <button id='goLeft' onClick={this.handleLeft}><img src={Previous} className='arrows' style={{width: '30px'}} alt='arrow'/></button>

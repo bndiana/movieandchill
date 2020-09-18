@@ -1,0 +1,30 @@
+.latest-releases-container{
+    background-color: lightgrey;
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    height: auto;
+    justify-content: space-between;
+}
+.render-movies-latest-releases{
+    width: 100%;
+    margin-left: 20px;
+}
+.movies-latest-releases{
+    margin-left: 6px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.desc-movie-latest-releases{
+    position: initial;
+    padding: 0;
+    text-align: center;
+}
+
+.poster-latest-releases{
+    height: 400px;
+    width: 284px;
+}
+h1{
+    display: block;
+}

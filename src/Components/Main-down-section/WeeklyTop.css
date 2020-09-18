@@ -1,0 +1,31 @@
+.weekly-top-container{
+    background-color: lightgrey;
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    height: auto;
+    justify-content: space-between;
+}
+.render-movies-weekly-top{
+    /* display: flex; */
+    width: 100%;
+    margin-left: 20px;
+}
+.movies{
+    margin-left: 6px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.desc-movie{
+    position: initial;
+    padding: 0;
+    text-align: center;
+}
+
+.poster-weekly-top{
+    height: 400px;
+    width: 284px;
+}
+h1{
+    display: block;
+}

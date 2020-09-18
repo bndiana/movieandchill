@@ -2,17 +2,14 @@ import React, { Component } from 'react';
 import './Toprating.css'
 
 class Toprating extends Component {
-
-
       state = {
           error: null,
           isLoaded: false,
           items: []
         };
-   
 
     componentDidMount(){
-        fetch('https://movies-app-siit.herokuapp.com/movies?&take=3')
+        fetch('https://movies-app-siit.herokuapp.com/movies?&take=3&skip=1')
         .then(res => res.json())
         .then(
           (result) => {
@@ -31,7 +28,6 @@ class Toprating extends Component {
         )
     }
   render(){
-
     const { error, isLoaded, items } = this.state;
     if (error) {
       return <div>Error: dsfds</div>;
@@ -58,5 +54,4 @@ class Toprating extends Component {
     }
   }
 }
-
 export default Toprating;

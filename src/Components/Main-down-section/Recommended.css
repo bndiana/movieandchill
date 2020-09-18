@@ -1,0 +1,30 @@
+.recommended-container{
+    background-color: lightgrey;
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    height: auto;
+    justify-content: space-between;
+}
+.render-movies-recommended{
+    width: 100%;
+    margin-left: 20px;
+}
+.movies-recommended{
+    margin-left: 6px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.desc-movie-recommended{
+    position: initial;
+    padding: 0;
+    text-align: center;
+}
+
+.poster-recommended{
+    height: 400px;
+    width: 284px;
+}
+h1{
+    display: block;
+}

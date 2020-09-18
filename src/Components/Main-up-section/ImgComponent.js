@@ -2,17 +2,14 @@ import React, { Component } from 'react';
 import './ImgComponent.scss';
 
 class ImgComponent extends Component {
-
-
     state = {
         error: null,
         isLoaded: false,
         items: []
       };
- 
 
   componentDidMount(){
-      fetch('https://movies-app-siit.herokuapp.com/movies?&take=5&skip=3')
+      fetch('https://movies-app-siit.herokuapp.com/movies?&take=5&skip=4')
       .then(res => res.json())
       .then(
         (result) => {
@@ -46,7 +43,7 @@ render(){
             <div className='two-movies'>
               <img src={item.Poster} alt='poster' className='poster-coming-soon'/>
             </div>
-            <div>
+            <div className='p-desc'>
               <p className='desc-movie' key={item._id}>
                 Title: {item.Title} <br/>
                 Genre: {item.Genre} 

@@ -8,12 +8,22 @@
     padding: 0;
 }
 .poster-coming-soon{
-    width: 45%;
-    height: 400px;
+    margin: auto;
+    width: 75%;
+    height: 700px;
     align-items: center;
     align-content: center;
     justify-content: center;
+    padding-bottom: 28px;
 }
 .two-movies{
     display: flex;
+}
+.p-desc{
+    margin: auto;
+    padding: 10px;
+}
+.desc-movie{
+    margin: auto;
+    padding: 20px;
 }

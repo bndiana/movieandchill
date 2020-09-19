@@ -1,7 +1,6 @@
 import React from "react";
 import MovieList from "../MovieList/MovieList";
 
-
 export default function FavoritePage() {
   const favoriteMovies = JSON.parse(localStorage.getItem("favorites"));
 

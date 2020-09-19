@@ -23,7 +23,7 @@ class MovieDetails extends Component {
   }
 
   fetchMovie = () => {
-    const url = `https://movies-app-siit.herokuapp.com/movies/${this.props.id}`;
+    const url = `https://movies-app-siit.herokuapp.com/movies/${this.props.match.params.id}`;
     fetch(url)
       .then((response) => {
         if (response.ok) {
@@ -49,7 +49,10 @@ class MovieDetails extends Component {
 
   checkMovieStorage = () => {
     const favorites = JSON.parse(localStorage.getItem("favorites"));
-    if (favorites && favorites.filter((e) => e._id === this.state.movie._id).length > 0) {
+    if (
+      favorites &&
+      favorites.filter((e) => e._id === this.state.movie._id).length > 0
+    ) {
       this.setState({ isFavorited: true });
     } else {
       this.setState({ isFavorited: false });
@@ -112,7 +115,7 @@ class MovieDetails extends Component {
       body: JSON.stringify(data),
     };
     fetch(
-      `https://movies-app-siit.herokuapp.com/movies/${this.props.id}`,
+      `https://movies-app-siit.herokuapp.com/movies/${this.props.match.params.id}`,
       editMovie
     )
       .then((res) => {
@@ -196,7 +199,7 @@ class MovieDetails extends Component {
                   movieItem={this.state.movie}
                 />
                 <EditButton onClick={this.onPopUpShow} />
-                <DeleteButton idForDelete={this.props.id} />
+                <DeleteButton idForDelete={this.props.match.params.id} />
               </div>
             )}
 

@@ -5,6 +5,8 @@ import { FavoriteButton } from "../Favorites/FavoriteButton";
 import DeleteButton from "../Delete/DeleteButton";
 import Cookies from "js-cookie";
 import { EditButton } from "../Edit/EditButton";
+import PopUpPage from "../utils/PopUpPage.js";
+import { Form } from "../utils/Form.js";
 
 class MovieDetails extends Component {
   state = {
@@ -13,9 +15,14 @@ class MovieDetails extends Component {
     errorMessage: null,
     isFavorited: false,
     loggedIn: Cookies.get("authToken"),
+    showingPopUp: false,
   };
 
   componentDidMount() {
+    this.fetchMovie();
+  }
+
+  fetchMovie = () => {
     const url = `https://movies-app-siit.herokuapp.com/movies/${this.props.id}`;
     fetch(url)
       .then((response) => {
@@ -38,7 +45,7 @@ class MovieDetails extends Component {
           errorMessage: error.message,
         });
       });
-  }
+  };
 
   checkMovieStorage = () => {
     if (localStorage.getItem(this.state.movie._id) != null) {
@@ -64,8 +71,57 @@ class MovieDetails extends Component {
       });
   };
 
+  onPopUpClose = () => this.setState({ showingPopUp: false });
+
+  onPopUpShow = () => this.setState({ showingPopUp: true });
+
+  formData = () => {
+    const movieKeys = [
+      "Title",
+      "Year",
+      "Runtime",
+      "Genre",
+      "Language",
+      "Country",
+      "Poster",
+      "imdbRating",
+      "imdbVotes",
+      "imdbId",
+      "Type",
+    ];
+
+    let emptyMovie = {};
+    for (const key of movieKeys) {
+      emptyMovie[key] = this.state.movie[key];
+    }
+    console.log(emptyMovie);
+    return emptyMovie;
+  };
+
+  editMovie = (data) => {
+    this.onPopUpClose();
+    this.setState({ loading: true });
+    const editMovie = {
+      method: "PUT",
+      headers: {
+        "x-auth-token": Cookies.get("authToken"),
+        "Content-Type": "application/json",
+        Accept: "*/*",
+      },
+      body: JSON.stringify(data),
+    };
+    fetch(
+      `https://movies-app-siit.herokuapp.com/movies/${this.props.id}`,
+      editMovie
+    )
+      .then((res) => {
+        this.fetchMovie();
+      })
+      .catch((error) => window.alert(error.message));
+  };
+
   render() {
-    const { loading, movie, errorMessage } = this.state;
+    const { loading, movie, errorMessage, showingPopUp } = this.state;
 
     if (loading) {
       return <div>loading...</div>;
@@ -74,6 +130,15 @@ class MovieDetails extends Component {
     } else {
       return (
         <React.Fragment>
+          {showingPopUp && (
+            <PopUpPage onClose={this.onPopUpClose}>
+              <Form
+                data={this.formData()}
+                buttonInnerText="Submit"
+                onSubmit={this.editMovie}
+              />
+            </PopUpPage>
+          )}
           <div className="page-content">
             <div className="movie-detail-page-header movie-detail-page">
               <div className="movie-detail-page movie-title">
@@ -129,15 +194,13 @@ class MovieDetails extends Component {
                   checkMovieStorage={this.checkMovieStorage}
                   movieItem={this.state.movie}
                 />
-                <EditButton />
+                <EditButton onClick={this.onPopUpShow} />
                 <DeleteButton idForDelete={this.props.id} />
               </div>
             )}
 
             {movie.Plot && (
-              <p className="movie-detail-page movie-plot">
-                <button onClick={this.dummyLogIn}>Log in</button> {movie.Plot}
-              </p>
+              <p className="movie-detail-page movie-plot">{movie.Plot}</p>
             )}
 
             <div className="movie-detail-page movie-more-details">
@@ -157,6 +220,7 @@ class MovieDetails extends Component {
                 </p>
               )}
             </div>
+            <button onClick={this.dummyLogIn}>Log in</button>
           </div>
         </React.Fragment>
       );

@@ -1,0 +1,26 @@
+.form {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: azure;
+  overflow: scroll;
+}
+
+.form label {
+  width: 80%;
+  margin: 5px;
+}
+
+.form-button {
+  margin: 10px;
+  width: 60px;
+  height: 20px;
+  align-self: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}

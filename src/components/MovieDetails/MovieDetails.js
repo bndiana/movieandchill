@@ -48,7 +48,8 @@ class MovieDetails extends Component {
   };
 
   checkMovieStorage = () => {
-    if (localStorage.getItem(this.state.movie._id) != null) {
+    const favorites = JSON.parse(localStorage.getItem("favorites"));
+    if (favorites && favorites.filter((e) => e._id === this.state.movie._id).length > 0) {
       this.setState({ isFavorited: true });
     } else {
       this.setState({ isFavorited: false });

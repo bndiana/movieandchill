@@ -1,0 +1,8 @@
+.movie-card {
+  display: flex;
+  flex-direction: row;
+}
+ .movie-card img {
+     width: 150px;
+     margin: 20px;
+ }

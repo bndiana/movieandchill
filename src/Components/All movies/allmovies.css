@@ -1,0 +1,572 @@
+.allmovies-page-container {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-allmovies-container {
+    margin-left: 30px;
+    font-size: 40px;
+    position: relative;
+}
+
+.addmovie-button {
+    font-size: 30px;
+    background-color: #ceeed4;
+    color: #fff;
+    width: 100%;
+    text-align: left;
+    padding: 5px 20px;
+    border: 0;
+    border-radius: 3px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+.addmovie-button:hover {
+    background-color: #96d4a2;
+}
+.addmovie-button:focus {
+    outline: none;
+}
+.render-allmovies {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.render-allmovies {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+}
+.allmovies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.render-allmovies {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-right: 1px solid rgb(199, 199, 199);
+    border-bottom: 1px solid rgb(199, 199, 199);
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+}
+.movie-desc {
+    position: absolute;
+    font-size: 20px;
+    top: 60px;
+    left: 30px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: auto;
+}
+.movie-desc:hover {
+    opacity: 1;
+} 
+.allmovies-poster {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}  
+.allmovies-poster:hover {
+    opacity: 0.5;
+}
+.loadmore-button{
+    font-size: 30px;
+    background-color: #ceeed4;
+    color: #fff;
+    width: 100%;
+    text-align: left;
+    padding: 5px 20px;
+    border: 0;
+    border-radius: 3px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+.loadmore-button:hover {
+    background-color: #96d4a2;
+}
+.loadmore-button:focus {
+    outline: none;
+}
+
+.popup {  
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;  
+    height: 90%;
+    top: 170px;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+  }  
+  .popup-addmovie-title {
+      font-size: 30px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      margin-left: 40px;
+      width: 100%;;
+  }
+  .inner-popup {  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: white;
+    width: 90%;
+    height: 60%;
+    margin-left: 50px; 
+    margin-top: 30px;
+    overflow-y: scroll;
+  }
+  #close-popup-button {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+  }
+.addmovie-popup-container {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+  .addmovie-popup-field {
+      color: black;
+      border: 1px solid rgba(129, 129, 129, 0.5);
+      margin-left: 20px;
+      font-size: 25px;
+      border-radius: 3px;
+      padding: 5px 20px;
+      margin-top: 5px;
+      transition: all 250ms ease-in-out;
+}
+.addmovie-popup-container:last-child {
+    margin-bottom: 40px;
+}
+.addmovie-popup-field:hover {
+    border: none;
+    background-color: rgba(197, 197, 197, 0.5);
+}
+.addmovie-popup-field:focus {
+    outline: none;
+}
+.button-addmovie-popup-container {
+    display: flex;
+    margin-top: 5px;
+    margin-left: 80%;
+}
+.button-addmovie-popup-container button {
+    font-size: 30px;
+    padding: 5px 20px;
+    border: 0;
+    background-color: #ceeed4;
+    color: #fff;
+    border-radius: 3px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+    .render-allmovies {
+        width: 250px;
+        height: 300px;
+        margin: 10px;
+    }
+    .title-allmovies-container {
+        font-size: 30px;
+    }
+    .addmovie-button {
+        font-size: 20px;
+    }
+    .loadmore-button{
+        font-size: 20px;
+    }
+    .inner-popup {  
+        width: 90%;
+        height: 70%;
+        margin-left: 20px; 
+        margin-top: 10px;
+      }
+      #close-popup-button {
+        right: 5px;
+        font-size: 15px;
+        width: 25px;
+        height: 25px;
+      }
+      .button-addmovie-popup-container {
+        margin-left: 60%;
+    }
+      .button-addmovie-popup-container button {
+        font-size: 15px;
+        padding: 5px 20px;
+    }
+    .popup {
+        top: 130px;
+    }
+    .addmovie-popup-container {
+        font-size: 25px;
+        width: 250px;
+        margin-top: 5px;
+        margin-left: 10px;
+        }
+      .addmovie-popup-field {
+          margin-left: 10px;
+          font-size: 15px;
+          padding: 5px 10px;
+        }
+        .allmovies-page-container {
+            margin-top: 50px;
+        }
+}
+@media only screen and (max-width: 569px) and (min-width: 501px) {
+    .render-allmovies {
+        width: 250px;
+        height: 300px;
+        margin: 5px;
+    }
+    .title-allmovies-container {
+        padding-top: 0px;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+    .addmovie-button {
+        font-size: 15px;
+    }
+    .popup-addmovie-title {
+        font-size: 20px;
+        margin-top: 10px;
+        }
+    .loadmore-button{
+        font-size: 20px;
+    }
+    .inner-popup {  
+        width: 90%;
+        height: 60%;
+        margin-left: 20px; 
+        margin-top: 10px;
+      }
+      #close-popup-button {
+        right: 5px;
+        font-size: 15px;
+        width: 25px;
+        height: 25px;
+      }
+      .button-addmovie-popup-container {
+        margin-left: 75%;
+    }
+      .button-addmovie-popup-container button {
+        font-size: 15px;
+        padding: 5px 20px;
+    }
+    .popup {
+        top: 70px;
+    }
+    .addmovie-popup-container {
+        font-size: 20px;
+        width: 250px;
+        margin-top: 5px;
+        margin-left: 10px;
+        }
+      .addmovie-popup-field {
+          margin-left: 10px;
+          font-size: 15px;
+          padding: 5px 10px;
+        }
+        .allmovies-page-container {
+            margin-top: 20px;
+        }
+}
+@media only screen and (max-width: 639px) and (min-width: 570px) {
+    .title-allmovies-container {
+        padding-top: 0px;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+    .addmovie-button {
+        font-size: 15px;
+    }
+    .popup-addmovie-title {
+        font-size: 20px;
+        margin-top: 10px;
+        }
+    .loadmore-button{
+        font-size: 20px;
+    }
+    .inner-popup {  
+        width: 90%;
+        height: 80%;
+        margin-left: 20px; 
+        margin-top: 10px;
+      }
+      #close-popup-button {
+        right: 5px;
+        font-size: 15px;
+        width: 25px;
+        height: 25px;
+      }
+      .button-addmovie-popup-container {
+        margin-left: 75%;
+    }
+      .button-addmovie-popup-container button {
+        font-size: 15px;
+        padding: 5px 20px;
+    }
+    .popup {
+        top: 70px;
+    }
+    .addmovie-popup-container {
+        font-size: 20px;
+        width: 250px;
+        margin-top: 5px;
+        margin-left: 10px;
+        }
+      .addmovie-popup-field {
+          margin-left: 10px;
+          font-size: 15px;
+          padding: 5px 10px;
+        }
+        .allmovies-page-container {
+            margin-top: 20px;
+        }
+}
+@media only screen and (max-width: 650px) and (min-width: 640px) {
+    .render-allmovies {
+        width: 250px;
+        height: 300px;
+        margin: 10px;
+    }
+    .title-allmovies-container {
+        padding-top: 0px;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+    .addmovie-button {
+        font-size: 15px;
+    }
+    .popup-addmovie-title {
+        font-size: 20px;
+        margin-top: 10px;
+        }
+    .loadmore-button{
+        font-size: 20px;
+    }
+    .inner-popup {  
+        width: 90%;
+        height: 60%;
+        margin-left: 20px; 
+        margin-top: 10px;
+      }
+      #close-popup-button {
+        right: 5px;
+        font-size: 15px;
+        width: 25px;
+        height: 25px;
+      }
+      .button-addmovie-popup-container {
+        margin-left: 75%;
+    }
+      .button-addmovie-popup-container button {
+        font-size: 15px;
+        padding: 5px 20px;
+    }
+    .popup {
+        top: 70px;
+    }
+    .addmovie-popup-container {
+        font-size: 15px;
+        width: 250px;
+        margin-top: 5px;
+        margin-left: 10px;
+        }
+      .addmovie-popup-field {
+          margin-left: 10px;
+          font-size: 10px;
+          padding: 5px 10px;
+        }
+        .allmovies-page-container {
+            margin-top: 20px;
+        }
+}
+@media only screen and (max-width: 656px) and (min-width: 651px) {
+    .title-allmovies-container {
+        padding-top: 0px;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+    .addmovie-button {
+        font-size: 15px;
+    }
+    .popup-addmovie-title {
+        font-size: 20px;
+        margin-top: 10px;
+        }
+    .loadmore-button{
+        font-size: 20px;
+    }
+    .inner-popup {  
+        width: 90%;
+        height: 50%;
+        margin-left: 20px; 
+        margin-top: 10px;
+      }
+      #close-popup-button {
+        right: 5px;
+        font-size: 15px;
+        width: 25px;
+        height: 25px;
+      }
+      .button-addmovie-popup-container {
+        margin-left: 75%;
+    }
+      .button-addmovie-popup-container button {
+        font-size: 15px;
+        padding: 5px 20px;
+    }
+    .popup {
+        top: 70px;
+    }
+    .addmovie-popup-container {
+        font-size: 15px;
+        width: 250px;
+        margin-top: 5px;
+        margin-left: 10px;
+        }
+      .addmovie-popup-field {
+          margin-left: 10px;
+          font-size: 10px;
+          padding: 5px 10px;
+        }
+        .allmovies-page-container {
+            margin-top: 20px;
+        }
+}
+
+@media only screen and (max-width: 760px) and (min-width: 657px) {
+    .title-allmovies-container {
+        padding-top: 0px;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+    .addmovie-button {
+        font-size: 15px;
+    }
+    .popup-addmovie-title {
+        font-size: 20px;
+        margin-top: 10px;
+        }
+    .loadmore-button{
+        font-size: 20px;
+    }
+    .inner-popup {  
+        width: 90%;
+        height: 65%;
+        margin-left: 20px; 
+        margin-top: 10px;
+      }
+      #close-popup-button {
+        right: 5px;
+        font-size: 15px;
+        width: 25px;
+        height: 25px;
+      }
+      .button-addmovie-popup-container {
+        margin-left: 75%;
+    }
+      .button-addmovie-popup-container button {
+        font-size: 15px;
+        padding: 5px 20px;
+    }
+    .popup {
+        top: 90px;
+    }
+    .addmovie-popup-container {
+        font-size: 20px;
+        width: 250px;
+        margin-top: 5px;
+        margin-left: 10px;
+        }
+      .addmovie-popup-field {
+          margin-left: 10px;
+          font-size: 15px;
+          padding: 5px 10px;
+        }
+        .allmovies-page-container {
+            margin-top: 40px;
+        }
+}
+@media only screen and (max-width: 1300px) and (min-width: 761px) {
+    .title-allmovies-container {
+        margin-left: 20px;
+        font-size: 30px;
+    }
+    .addmovie-button {
+        font-size: 25px;
+    }
+    .popup-addmovie-title {
+        font-size: 30px;
+        margin-top: 10px;
+        }
+    .loadmore-button{
+        font-size: 25px;
+    }
+    .inner-popup {  
+        width: 90%;
+        height: 70%;
+        margin-left: 20px; 
+        margin-top: 10px;
+      }
+      #close-popup-button {
+        right: 5px;
+        font-size: 20px;
+        width: 30px;
+        height: 30px;
+      }
+      .button-addmovie-popup-container {
+        margin-left: 75%;
+    }
+      .button-addmovie-popup-container button {
+        font-size: 20px;
+        padding: 5px 20px;
+    }
+    .popup {
+        top: 150px;
+    }
+    .addmovie-popup-container {
+        font-size: 25px;
+        width: 250px;
+        margin-top: 5px;
+        margin-left: 10px;
+        }
+      .addmovie-popup-field {
+          margin-left: 10px;
+          font-size: 20px;
+          padding: 5px 10px;
+        }
+        .allmovies-page-container {
+            margin-top: 60px;
+        }
+}
+@media only screen and (min-width: 1300px) {
+    .inner-popup {  
+        height: 75%;
+      } 
+      .popup {
+          top:190px;
+      }
+}

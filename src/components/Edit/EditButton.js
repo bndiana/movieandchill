@@ -2,8 +2,6 @@ import React from "react";
 import "../MovieDetails/MovieDetails.css";
 import { ReactComponent as Pencil } from "../MovieDetails/svgs/pencil.svg";
 
-
-
 export function EditButton(props) {
 
   return (

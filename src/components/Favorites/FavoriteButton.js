@@ -17,9 +17,11 @@ export function FavoriteButton(props) {
 }
 
 const handleAddToFavorites = (isFavorite, movieItem) => {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
   if (isFavorite) {
-    localStorage.removeItem(movieItem._id);
+    favorites = favorites.filter((e) => e._id !== movieItem._id);
   } else {
-    localStorage.setItem(movieItem._id, JSON.stringify({movieItem}));
+    favorites.push(movieItem);
   }
+  localStorage.setItem("favorites", JSON.stringify(favorites));
 };

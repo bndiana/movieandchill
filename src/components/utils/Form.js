@@ -12,7 +12,7 @@ export function Form(props) {
             <input
               type="text"
               name={key}
-              value={data[key]}
+              value={data[key] || ""}
               onChange={(ev) => {
                 let newData = { ...data };
                 newData[ev.target.name] = ev.target.value;

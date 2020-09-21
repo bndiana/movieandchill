@@ -1,17 +1,23 @@
-import React, { Component } from 'react';
+import React from "react";
 import "./App.css";
-import AppLogin from './Components/Login-page/AppLogin'
-// import Allmovies from './Components/All movies/Allmovies'
+import FavoritePage from "./components/Favorites/FavoritePage";
+import MovieDetails from "./components/MovieDetails/MovieDetails";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-class App extends Component {
-
-  render(){
-     return (
-    <div className='main-container'>
-      <AppLogin />
-      </div>
-
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/movie/:id" component={MovieDetails} />
+            <Route exact path="/favorite" component={FavoritePage} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
+>>>>>>> master
 }
 }
 export default App;

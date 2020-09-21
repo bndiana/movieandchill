@@ -15,14 +15,16 @@ class DeleteButton extends Component {
     fetch(
       `https://movies-app-siit.herokuapp.com/movies/${this.props.idForDelete}`,
       deleteMovie
-    ).then((res) => {
-      if (res.ok) {
-        //Redirect
-      } else {
-        throw new Error("Something went wrong!")
-      }
-    })
-    .catch((error) => window.alert(error.message));
+    )
+      .then((res) => {
+        if (res.ok) {
+          //Redirect
+          window.location = "https://www.facebook.com";
+        } else {
+          throw new Error("Something went wrong!");
+        }
+      })
+      .catch((error) => window.alert(error.message));
   };
 
   render() {

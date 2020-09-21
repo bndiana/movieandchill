@@ -1,0 +1,26 @@
+.favorites-movie-page {
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+}
+
+.favorite-page-title {
+  margin-top: 0;
+  background: rgb(36, 76, 87);
+  background: linear-gradient(
+    112deg,
+    rgba(36, 76, 87, 1) 32%,
+    rgba(63, 132, 150, 1) 78%
+  );
+  text-align: left;
+  color: white;
+  padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .favorite-page-title {
+    justify-self: center;   
+    align-content: center;
+    text-align: center;
+  }
+} ;

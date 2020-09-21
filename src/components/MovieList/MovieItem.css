@@ -1,7 +1,9 @@
 .movie-card {
   display: flex;
   flex-direction: row;
-  border-bottom: 2px solid green;
+  -webkit-box-shadow: 0px 0px 0px 0px #cbc9c9;
+  -moz-box-shadow: 0px 0px 0px 0px #cbc9c9;
+  box-shadow: 0px 5px 5px 0px #cbc9c9;
 }
 
 .movie-card div {
@@ -13,11 +15,34 @@
 .movie-card img {
   width: 150px;
   margin: 20px;
+  margin-left: 100px;
 }
 
 .movie-card h3 {
-color: hotpink;
+  color: #244c57;
+}
+
+#movie-title {
+  font-size: 25px;
+  text-shadow: 2px 2px #e6e3e3;
 }
 
 #movie-year {
+  padding: 30px;
+  color: black;
+}
+
+@media screen and (max-width: 767px) {
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .movie-card img {
+    width: 250px;
+    margin: 20px;
+    margin-left: 100px;
+    align-self: center;
+  }
 }

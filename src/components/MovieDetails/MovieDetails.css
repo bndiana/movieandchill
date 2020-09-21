@@ -1,10 +1,16 @@
+html {
+  margin: 0;
+  border: 0;
+}
+
 .page-content {
-  background: rgb(2, 0, 36);
+  display: flex;
+  flex-direction: column;
+  background: rgb(63, 132, 150);
   background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(16, 54, 78, 0.8337710084033614) 52%,
-    rgba(0, 212, 255, 1) 100%
+    112deg,
+    rgba(63, 132, 150, 1) 17%,
+    rgba(203, 201, 201, 1) 65%
   );
 }
 
@@ -12,7 +18,7 @@
   display: flex;
   flex-direction: row;
   flex: 1;
-  background-color: rgb(2, 8, 16);
+  background-color: #153740;
 }
 
 .movie-title {
@@ -22,10 +28,15 @@
 
 .movie-star {
   margin-left: auto;
+  padding: 10px;
 }
 
 .movie-poster {
   justify-content: center;
+}
+
+.movie-poster img {
+  width: 500px;
 }
 
 .movie-characteritics-bar {
@@ -35,22 +46,23 @@
   justify-content: space-between;
   text-align: center;
   margin: 20px;
-  background-color: rgb(2, 0, 36);
+  background: rgb(191, 146, 108);
   background: linear-gradient(
-    112deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(16, 54, 78, 0.9639830508474576) 100%
+    90deg,
+    rgba(191, 146, 108, 1) 0%,
+    rgba(176, 172, 163, 1) 37%,
+    rgba(63, 132, 150, 1) 100%
   );
 }
 
 .movie-characteritics-bar-square {
   flex: 0.3;
   text-align: center;
-  color: aliceblue;
+  color: #153740;
 }
 
 .movie-year,
-.movie-rating{
+.movie-rating {
   border-right: solid 2px aqua;
 }
 
@@ -77,25 +89,45 @@
 }
 
 .movie-plot {
-  background-color:  rgb(2,0,36);
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(194,215,217,0.8265984195402298) 0%);;
+  background: rgb(83, 160, 180);
+  background: radial-gradient(
+    circle,
+    rgba(83, 160, 180, 1) 0%,
+    rgba(28, 36, 38, 1) 100%
+  );
   border-radius: 5%;
   text-align: center;
-  padding: 5px;
+  padding: 15px;
   width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
   margin-top: 90px;
+  margin-bottom: 90px;
   width: 75%;
-  height: 100px;
+  height: 30%;
+  color: #e6e3e3;
+  font-size: 30px;
 }
 
 .movie-more-details {
   display: flex;
   flex-direction: column;
-  margin-right: auto;
+  text-align: left;
   margin-top: 20px;
-  padding: 7px;
+  margin-bottom: 0px;
+  background: rgb(191, 146, 108);
+  background: linear-gradient(
+    270deg,
+    rgba(191, 146, 108, 1) 0%,
+    rgba(176, 172, 163, 1) 18%,
+    rgba(63, 132, 150, 1) 83%
+  );
+}
+
+.movie-more-details p {
+  background: none;
+  padding: 5px;
+  margin-bottom: 20px;
 }
 
 .movie-star path {
@@ -111,7 +143,59 @@
   height: 20px;
 }
 
-.fav-button-favorite path {
-  fill: yellow;
-}
+@media screen and (max-width: 767px) {
+  .movie-title {
+    justify-content: center;
+    align-self: center;
+  }
 
+  .movie-poster img {
+    justify-content: center;
+    width: 70%;
+  }
+
+  .movie-button-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movie-characteritics-bar-square {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .movie-button img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .fav-button,
+  .edit-button,
+  .delete-button {
+    height: 50px;
+    width: 70px;
+  }
+
+  .movie-button {
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .movie-plot {
+    justify-self: center;
+    align-self: center;
+    border-radius: 5%;
+    text-align: center;
+    padding: 15px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 75%;
+    height: 80%;
+    color: #e6e3e3;
+    font-size: 22px;
+  }
+}

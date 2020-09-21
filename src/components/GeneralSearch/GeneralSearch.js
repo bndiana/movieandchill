@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import { Form } from "../utils/Form.js";
 import MovieList from "../MovieList/MovieList.js";
-// import "./GeneralSearch.css";
+import Pagination from "../utils/Pagination";
 const appendQuery = require("append-query");
 
 class GeneralSearch extends Component {
-  state = { movie: [] };
+  state = { movie: [], pagination: null };
+
   searchMovie = (data) => {
-    let url = "https://movies-app-siit.herokuapp.com/movies";
+    const url = appendQuery(
+      "https://movies-app-siit.herokuapp.com/movies",
+      data,
+      { removeNull: true }
+    );
+    this.fetchMovie(url);
+  };
 
-    url = appendQuery(url, data, { removeNull: true });
-
-    console.log(url);
+  fetchMovie = (url) => {
     fetch(url)
       .then((response) => {
         if (response.ok) {
@@ -21,9 +26,25 @@ class GeneralSearch extends Component {
         }
       })
       .then((json) => {
-        this.setState({ movie: json.results });
+        this.setState({ movie: json.results, pagination: json.pagination });
       })
-      .catch((error) => {});
+      .catch((error) => window.alert(error.message));
+  };
+
+  handlePageChange = (direction) => {
+    const { prev, next } = this.state.pagination.links;
+    switch (direction) {
+      case "prev":
+        prev && this.fetchMovie(prev);
+        break;
+
+      case "next":
+        next && this.fetchMovie(next);
+        break;
+
+      default:
+        break;
+    }
   };
 
   render() {
@@ -40,7 +61,7 @@ class GeneralSearch extends Component {
       imdbId: null,
       Type: null,
     };
-    console.log(this.state.movie);
+
     return (
       <div className="general-search-content">
         <div className="form">
@@ -50,8 +71,16 @@ class GeneralSearch extends Component {
             onSubmit={this.searchMovie}
           />
         </div>
-        <div className="movie-list"><MovieList data={this.state.movie} /></div>
-        
+        <div className="movie-list">
+          <MovieList data={this.state.movie} />
+        </div>
+        {this.state.pagination && (
+          <Pagination
+            currentPage={this.state.pagination.currentPage}
+            numberOfPages={this.state.pagination.numberOfPages}
+            onPageChange={this.handlePageChange}
+          />
+        )}
       </div>
     );
   }

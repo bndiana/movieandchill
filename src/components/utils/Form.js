@@ -15,7 +15,9 @@ export function Form(props) {
               value={data[key] || ""}
               onChange={(ev) => {
                 let newData = { ...data };
-                newData[ev.target.name] = ev.target.value;
+                newData[ev.target.name] = ev.target.value
+                  ? ev.target.value
+                  : null;
                 setData(newData);
               }}
             />

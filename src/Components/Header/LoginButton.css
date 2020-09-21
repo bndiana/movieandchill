@@ -19,3 +19,9 @@
 .login-btn:hover{
   background-color: paleturquoise;
 }
+
+@media (min-width: 320px) and (max-width: 530px) {
+  .login-btn{
+    width: 60px;
+    }
+}

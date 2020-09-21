@@ -29,17 +29,17 @@ handleRight = () =>{
 
 goToNextPageRight = () => {
     if(this.state.index === 4){
-        this.setState({index: this.state.index === 0}) 
+        this.setState({index: 0}) 
     } else {
          this.setState({index: this.state.index + 1})
     }
 }
 
 goToNextPageLeft = () => {
-    if(this.state.index >= 0){
-        this.setState({index: this.state.index === 4}) 
+    if(this.state.index > 0){
+        this.setState({index: this.state.index - 1}) 
     } else {
-         this.setState({index: this.state.index - 1})
+         this.setState({index: 4})
     }  
 }
 

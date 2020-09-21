@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import './Recommended.css';
-// import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Link} from 'react-router-dom'
-// import RecommendedPage from './RecommendedPage';
 
 class Recommended extends Component {
     state = {
@@ -13,7 +10,7 @@ class Recommended extends Component {
  
 
   componentDidMount(){
-      fetch('https://movies-app-siit.herokuapp.com/movies?&take=4&skip=13')
+      fetch('https://movies-app-siit.herokuapp.com/movies?&take=12&skip=13')
       .then(res => res.json())
       .then(
         (result) => {
@@ -42,9 +39,7 @@ render(){
     console.log(items, this.props.index)
     return (
         <div>
-          <Link to='/RecommendedPage'>
              <h1>Recommended</h1>
-          </Link>
       <div className='recommended-container'>
         {items.map(item => (
           <div className='render-movies-recommended' key={item._id}>

@@ -41,11 +41,11 @@ class Toprating extends Component {
             <div className='render-movies' key={item._id}>
               <img src={item.Poster} alt='poster' className='poster'/>
               <p className='movie-desc' key={item._id}>
-                 Title: {item.Title} <br/>
-                 Genre: {item.Genre} <br/>
-                 Year: {item.Year} <br/>
-                 Language: {item.Language} <br/>
-                 ImdbRating: {item.imdbRating} 
+                 <span>Title:</span> {item.Title} <br/>
+                 <span>Genre:</span> {item.Genre} <br/>
+                 <span>Year:</span> {item.Year} <br/>
+                 <span>Language:</span> {item.Language} <br/>
+                 <span>ImdbRating:</span> {item.imdbRating} 
               </p>
             </div>
           ))}

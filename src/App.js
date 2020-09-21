@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import "./App.css";
-import Searchbar from './Components/Header/Searchbar';
-import Login from './Components/Header/Login';
+// import Searchbar from './Components/Header/Searchbar';
+// import LoginButton from './Components/Header/LoginButton';
 import Toprating from './Components/Main-up-section/Toprating';
 import Comingsoon from './Components/Main-up-section/Comingsoon';
 import WeeklyTop from './Components/Main-down-section/WeeklyTop';
 import Recommended from './Components/Main-down-section/Recommended';
 import TheLatestReleases from './Components/Main-down-section/TheLatestReleases';
 import Footer from './Components/Footer/Footer';
-import DropdownMenu from './Components/Main-up-section/DropdownMenu';
-import RecommendedPage from './Components/Main-down-section/RecommendedPage'
-import theater from './theater.svg';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+// import DropdownMenu from './Components/Main-up-section/DropdownMenu';
+// import clapperboard from './clapperboard.svg';
+import {BrowserRouter as Router} from "react-router-dom";
+import NavBar from './Components/Header/NavBar'
 
 
 
@@ -21,23 +21,13 @@ class App extends Component {
      return (
        <Router>
           <React.Fragment>
-            <div className='main-container'>
-              <div className="App">
-                <div className='img-container'>
-                  <img className='theater' src={theater} alt='theater'/>
-                    < DropdownMenu />
-                </div>
-                <Searchbar />
-                <Login />
-              </div>
-            </div>
+            <NavBar />
             <div className='movies-container'>
               <Toprating />
-              <Comingsoon />
+              < Comingsoon />
             </div>
               <WeeklyTop />
-              <Recommended />
-              <Route path='./Components/Main-down-section/RecommendedPage' exact component={RecommendedPage}/>               
+              <Recommended />             
               <TheLatestReleases />
               <Footer />              
           </React.Fragment>

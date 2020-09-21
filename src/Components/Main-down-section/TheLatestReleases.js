@@ -10,7 +10,7 @@ class TheLatestReleases extends Component {
  
 
   componentDidMount(){
-      fetch('https://movies-app-siit.herokuapp.com/movies?&take=4&skip=17')
+      fetch('https://movies-app-siit.herokuapp.com/movies?&take=8&skip=25')
       .then(res => res.json())
       .then(
         (result) => {

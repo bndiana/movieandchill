@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './Searchbar.css';
-import ImgComponent from '../Main-up-section/ImgComponent'
+// import ImgComponent from '../Main-up-section/ImgComponent'
 
 class Searchbar extends Component {
 
     state = {
         search: ''
     }
+
+    handleChange = (event) => {
+        this.setState({search: event.target.value})
+    }
+    handleEnter = (event) => {
+        if(event.key === "Enter"){
+            this.props.history.push(`/advance-search?Title=${this.state.search}`)
+        }
+    }
+
     render() {
-        // let filterMovies = this.props.items.filter(
-        //     (movie) => {
-        //         return movie.Title.toLowerCase().indexOf(
-        //             this.state.search.toLocaleLowerCase()
-        //         ) !== -1;
-        //     }
-        // );
+        
         return (
              <div className='search'>
-                <input type='text' value={this.state.search} name='text' placeholder='Search movie' className='search-bar' />
-                {/* <ul>
-                    {filterMovies.map((movie)=> {
-                        return <ImgComponent movie={movie} />
-                    })}
-                </ul> */}
+                <input type='text' value={this.state.search} onKeyUp={this.handleEnter} onChange={this.handleChange} name='text' placeholder='Search movie' className='search-bar' />
             </div>
         )
     }
 }
-export default Searchbar;
+export default withRouter(Searchbar);

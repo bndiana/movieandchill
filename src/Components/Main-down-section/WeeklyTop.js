@@ -48,7 +48,7 @@ render(){
               <img src={item.Poster} alt='poster' className='poster-weekly-top'/>
             </div>
             <div className='p-desc'>
-              <p className='desc-movie' key={item._id}>
+              <p className='desc-movie-weekly' key={item._id}>
                 Title: {item.Title} <br/>
                 Genre: {item.Genre} 
               </p>

@@ -5,15 +5,14 @@
   background: rgba(0, 0, 0, 0.8);
   z-index: 1;
   position: fixed;
-  justify-content: center;
-  align-items: center;
 }
 
 .pop-up-content {
+  margin: auto;
+  max-width: 70%;
+  max-height: 50%;
   justify-content: center;
   align-items: center;
-  display: flex;
-  flex: 1;
 }
 
 .close {

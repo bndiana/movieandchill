@@ -1,8 +1,23 @@
 .movie-card {
   display: flex;
   flex-direction: row;
+  border-bottom: 2px solid green;
 }
- .movie-card img {
-     width: 150px;
-     margin: 20px;
- }
+
+.movie-card div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.movie-card img {
+  width: 150px;
+  margin: 20px;
+}
+
+.movie-card h3 {
+color: hotpink;
+}
+
+#movie-year {
+}

@@ -98,7 +98,6 @@ class MovieDetails extends Component {
     for (const key of movieKeys) {
       emptyMovie[key] = this.state.movie[key];
     }
-    console.log(emptyMovie);
     return emptyMovie;
   };
 

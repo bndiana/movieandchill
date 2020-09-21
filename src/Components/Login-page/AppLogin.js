@@ -1,17 +1,12 @@
 import React from "react";
+import './styleAppLogin.css'
 import { LoginPage, SignupPage } from './index'
 
 class AppLogin extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+state = {
       isLogginActive: true,
     };
-  }
-  bydefault() {
-    this.rightSide.classList.add("right");
-  }
-  changeState() {
+  changeState = () => {
     const { isLogginActive } = this.state;
     if (isLogginActive) {
       this.Swipe.classList.remove("right");
@@ -26,9 +21,9 @@ class AppLogin extends React.Component {
     const { isLogginActive } = this.state;
     const current = isLogginActive ? "Signup" : "Login";
     return (
-      <div className="App">
-        <div className="loginpage">
-          <div className="container" ref={ref => (this.container = ref)}>
+      <div className="App-login-page">
+        <div className="login-page">
+          <div className="container-loginpage" ref={ref => (this.container = ref)}>
             {isLogginActive && (<LoginPage containerRef={ref => (this.current = ref)} />)}
             {!isLogginActive && (<SignupPage containerRef={ref => (this.current = ref)} />)}
           </div>
@@ -48,7 +43,7 @@ const Swipe = props => {
     ref={props.containerRef}
     onClick={props.onClick}>
     <div className="swipe-container">
-      <div className="text">{props.current}</div>
+      <div className="text-swipe">{props.current}</div>
     </div>
   </div>
   )

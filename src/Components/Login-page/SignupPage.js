@@ -1,4 +1,5 @@
 import React from "react";
+import './styleLoginPage.css';
 import Signupimg from './sign-up.svg'
 
 export class SignupPage extends React.Component {
@@ -37,7 +38,7 @@ export class SignupPage extends React.Component {
                     localStorage.setItem("accessToken", json.accessToken);
                 });
         } else {
-            alert ('Please complete all fields')
+            alert('Please complete all fields')
         }
     };
     handleSubmit = (e) => {
@@ -54,36 +55,36 @@ export class SignupPage extends React.Component {
 
     render() {
         return (
-            <div className="container" ref={this.props.containerRef}>
-                <div className="title">Sign up</div>
-                <div className="content">
-                    <div className="Account">
-                        <div className="Account-content">
-                            <img id="signup-page-img" src={Signupimg} alt="SignupImg" />
-                        </div>
-                        <div className="Account-content">
-                            <label>FirstName</label>
+            <div className="container-loginpage" ref={this.props.containerRef}>
+                <div className="title-loginpage">Sign up</div>
+                <div className="content-loginpage">
+                    <div className="image-container-loginpage">
+                        <img id="signup-page-img" src={Signupimg} alt="SignupImg" />
+                    </div>
+                    <div className="Account-loginpage">
+                        <div className="Account-content-login-page">
+                            <label htmlFor='FirstName'>First Name</label>
                             <input className="field-login-page" type="FirstName" name='FirstName' placeholder="FirstName" onChange={this.handleChange}></input>
                         </div>
-                        <div className="Account-content">
-                            <label>LastName</label>
+                        <div className="Account-content-login-page">
+                            <label htmlFor='LastName'>Last Name</label>
                             <input className="field-login-page" type="LastName" name='LastName' placeholder="LastName" onChange={this.handleChange}></input>
                         </div>
-                        <div className="Account-content">
-                            <label>Username</label>
+                        <div className="Account-content-login-page">
+                            <label htmlFor='username'>Username</label>
                             <input className="field-login-page" type="Username" name='Username' placeholder="Username" onChange={this.handleChange}></input>
                         </div>
-                        <div className="Account-content">
-                            <label>Email</label>
+                        <div className="Account-content-login-page">
+                            <label htmlFor='email'>Email</label>
                             <input className="field-login-page" type="Email" name='Email' placeholder="Email" onChange={this.handleChange}></input>
                         </div>
-                        <div className="Account-content">
-                            <label>Password</label>
+                        <div className="Account-content-login-page">
+                            <label htmlFor='password'>Password</label>
                             <input className="field-login-page" type="Password" name='Password' placeholder="Password" onChange={this.handleChange}></input>
                         </div>
                     </div>
                 </div>
-                <div className="footer-button">
+                <div className="footer-button-login-page">
                     <button className="button-login-page" onClick={this.handleSignup}>Sign up</button>
                 </div>
             </div>

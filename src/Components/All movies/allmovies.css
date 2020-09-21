@@ -510,7 +510,7 @@
             margin-top: 40px;
         }
 }
-@media only screen and (max-width: 1300px) and (min-width: 761px) {
+@media only screen and (max-width: 800px) and (min-width: 761px) {
     .title-allmovies-container {
         margin-left: 20px;
         font-size: 30px;

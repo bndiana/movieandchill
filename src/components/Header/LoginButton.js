@@ -1,14 +1,34 @@
 import React, { Component } from 'react';
-import './LoginButton.css'
+import './LoginButton.css';
 
 class LoginButton extends Component {
 
+    state = {
+        loggedInStatus: "NOT_LOGGED_IN",
+        user: {}
+      };
+
+    handleLogout() {
+        this.setState({
+          loggedInStatus: "NOT_LOGGED_IN",
+          user: {}
+        });
+      }
+
     render() {
-        return (
-            <div className='login'>
+            // if (json.authenticated === true){
+            //     return (
+            //         <div>
+            //             <button>Profile</button>
+            //         </div>
+            //     )
+            // }else{
+                return (
+             <div className='login'>
                 <button className='login-btn'>Login</button>
-            </div>
-        )
+            </div>                     
+                )
+            }
     }
-}
+// }
 export default LoginButton;

@@ -67,9 +67,6 @@ and (max-device-width : 480px){
     .poster-latest-releases{
         height: 400px;
         width: 350px;
-        -webkit-box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
-        -moz-box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
-        box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
     }
 }
 
@@ -95,9 +92,6 @@ and (max-device-width : 480px){
     .poster-latest-releases{
         height: 400px;
         width: 350px;
-        -webkit-box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
-        -moz-box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
-        box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
     }
   }
 
@@ -124,8 +118,55 @@ and (max-device-width : 480px){
     .poster-latest-releases{
         height: 300px;
         width: 254px;
-        -webkit-box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
-        -moz-box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
-        box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
+    }
+  }
+  @media (min-width: 1024px) and (max-width: 1300px) {
+    .latest-releases-container{
+        background-color: lightgrey;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        height: auto;
+        overflow: auto;
+        justify-content: space-between;
+    }
+    .render-movies-latest-releases{
+        width: 100%;
+        margin: 0;
+        text-align-last: center;
+        flex: 1 0 21%;
+    }
+    .movies-latest-releases{
+        margin-top: 5px;
+    }
+    .poster-latest-releases{
+        height: 300px;
+        width: 254px;
+    }
+  }
+  @media (min-width: 1300px) and (max-width: 1500px) {
+    .latest-releases-container{
+        background-color: lightgrey;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        height: auto;
+        overflow: auto;
+        justify-content: space-between;
+    }
+    .render-movies-latest-releases{
+        width: 100%;
+        margin: 0;
+        text-align-last: center;
+        flex: 1 0 21%;
+    }
+    .movies-latest-releases{
+        margin-top: 5px;
+    }
+    .poster-latest-releases{
+        height: 300px;
+        width: 254px;
     }
   }

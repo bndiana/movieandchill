@@ -134,3 +134,9 @@ and (max-device-width : 480px){
     margin: auto 0;
   }
 }
+@media (min-width: 1301px) and (max-width: 1400px) {
+  .movies-container{
+    display: block;
+    width: 100%;
+  }
+}

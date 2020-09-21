@@ -17,7 +17,6 @@ class App extends React.Component {
       </Router>
     );
   }
->>>>>>> master
-}
+
 }
 export default App;

@@ -8,10 +8,10 @@ import WeeklyTop from './Components/Main-down-section/WeeklyTop';
 import Recommended from './Components/Main-down-section/Recommended';
 import TheLatestReleases from './Components/Main-down-section/TheLatestReleases';
 import Footer from './Components/Footer/Footer';
-// import DropdownMenu from './Components/Main-up-section/DropdownMenu';
-// import clapperboard from './clapperboard.svg';
-import {BrowserRouter as Router} from "react-router-dom";
-import NavBar from './Components/Header/NavBar'
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import NavBar from './Components/Header/NavBar';
+import FavoritePage from "./Components/Favorites/FavoritePage";
+import MovieDetails from "./Components/MovieDetails/MovieDetails";
 
 
 
@@ -21,7 +21,11 @@ class App extends Component {
      return (
        <Router>
           <React.Fragment>
-            <NavBar />
+              <NavBar />
+              <Switch>
+                <Route exact path="/movie/:id" component={MovieDetails} />
+                <Route exact path="/favorite" component={FavoritePage} />
+             </Switch>
             <div className='movies-container'>
               <Toprating />
               < Comingsoon />

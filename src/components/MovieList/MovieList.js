@@ -7,7 +7,11 @@ export default function MovieList(props) {
     <div>
       {props.data.map((item) => {
         return (
-          <Link to={`/movie/${item._id}`} key={item._id}>
+          <Link
+            to={`/movie/${item._id}`}
+            key={item._id}
+            style={{ textDecoration: "none" }}
+          >
             <MovieItem item={item} />
           </Link>
         );

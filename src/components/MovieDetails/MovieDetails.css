@@ -62,7 +62,6 @@
 .movie-button-bar {
   display: flex;
   justify-content: space-between;
-  /* flex: 1; */
   flex: row;
   margin-left: 10%;
   margin-right: 10%;
@@ -115,3 +114,4 @@
 .fav-button-favorite path {
   fill: yellow;
 }
+

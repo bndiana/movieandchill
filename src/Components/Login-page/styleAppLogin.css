@@ -12,7 +12,6 @@
   .login-page {
     width: 400px;
     height: 100%;
-    /* min-height: 44em; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,14 +32,18 @@
       height: 100%;
       z-index: 99;
       padding: 17px 10px;
-      /* transition: transform 200ms ease-in-out; */
     }
     .right-side {
       display: flex;
       flex-direction: column;
       justify-content: center;
       height: 90%;
-      background-color: #ceeed4;
+      background: rgb(63, 132, 150);
+      background: linear-gradient(
+        to bottom right,
+        rgba(63, 132, 150, 1) 17%,
+        rgba(203, 201, 201, 1) 65%
+      );      
       width: 100%;
       position: absolute;
       right: -30%;
@@ -77,14 +80,14 @@
     margin-top: 0px;
     padding: 5px 20px;
     border: 0;
-    background-color: #ceeed4;
+    background: rgb(63, 132, 150);
     color: #fff;
     border-radius: 3px;
     transition: all 250ms ease-in-out;
     cursor: pointer;
   }
     .button-login-page:hover {
-        background-color: #96d4a2;
+        background-color: rgb(70, 149, 168);
     }
     .button-login-page:focus {
       outline: none;
@@ -97,23 +100,23 @@
     }
     .right-side {
       height: 50%;
-      width: 90%;
+      width: 70%;
       top: -15%;
     }
     .right {
       top: -14%;
-      margin-right: 80px;
+      margin-right: 120px;
     }
     .left {
       top: -14%;
-      margin-right: -60px;
+      margin-right: -40px;
     }
     .text-swipe {
       font-size: 21px;
       font-weight: 500px;
       color: #fff;
-      margin-right: 80px;
-      margin-left: 80px;
+      margin-right: 60px;
+      margin-left: 70px;
       margin-bottom: 110px;
     }
     }

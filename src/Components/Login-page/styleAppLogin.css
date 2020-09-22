@@ -4,18 +4,15 @@
     justify-content: center;
     align-items: center;
     font-family: "Open Sans", sans-serif;
-    margin-top: 70px;
-    margin-bottom: 70px;
     width: 100%;
-    height: 100%;
+    height: 450px;
   }
   .login-page {
-    width: 400px;
-    height: 100%;
-    display: flex;
+      width: 400px;
+      height: 400px;
+      display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5px;
     position: relative;
     z-index: 99; 
 }
@@ -95,21 +92,18 @@
 
 
 @media only screen and (max-width: 300px) {
-    .App-login-page {
-      margin-left: 5px;
-    }
     .right-side {
       height: 50%;
       width: 70%;
       top: -15%;
     }
     .right {
-      top: -14%;
+      top: -3%;
       margin-right: 120px;
     }
     .left {
-      top: -14%;
-      margin-right: -40px;
+      top: -3%;
+      margin-right: -50px;
     }
     .text-swipe {
       font-size: 21px;
@@ -117,22 +111,19 @@
       color: #fff;
       margin-right: 60px;
       margin-left: 70px;
-      margin-bottom: 110px;
+      margin-bottom: 160px;
     }
     }
 
 
     @media only screen and (max-width: 319px) and (min-width: 301px) {
-      .App-login-page {
-        margin-left: 2px;
-      }
       .right-side {
         height: 50%;
         width: 65%;
         top: -15%;
       }
       .right {
-        top: -14%;
+        top: 0;
         margin-right: 150px;
       }
       .left {
@@ -150,23 +141,26 @@
       }
       @media only screen and (max-width: 358px) and (min-width: 320px) {
         .App-login-page {
-          margin-left: 2px;
+          margin-top: 10px;
         }
         .right-side {
           height: 50%;
-          width: 65%;
-          top: -15%;
+          width: 60%;
         }
         .right {
-          top: -14%;
+          top: -3%;
           margin-right: 130px;
         }
         .right:hover {
-          margin-right: 150px;
+          top: -3%;
+          margin-right: 160px;
         }
         .left {
-          top: -14%;
-          margin-right: -40px;
+          top: -3%;
+          margin-right: -30px;
+        }
+        .left:hover {
+          top: -3%;
         }
         .text-swipe {
           font-size: 21px;
@@ -174,28 +168,30 @@
           color: #fff;
           margin-right: 70px;
           margin-left: 80px;
-          margin-bottom: 110px;
+          margin-bottom: 160px;
         }
         }
       @media only screen and (max-width: 374px) and (min-width: 359px) {
-        .App-login-page {
-          margin-left: 2px;
-        }
         .right-side {
           height: 50%;
           width: 60%;
           top: -15%;
         }
         .right {
-          top: -14%;
-          margin-right: 160px;
+          top: -2%;
+          margin-right: 150px;
         }
         .left {
-          top: -14%;
-          margin-right: -40px;
+          top: -2%;
+          margin-right: -20px;
         }
         .right:hover {
+          top: -2%;
           margin-right: 180px;
+        }
+        .left:hover{
+          top: -2%;
+          margin-right: -40px;
 
         }
         .text-swipe {
@@ -204,59 +200,64 @@
           color: #fff;
           margin-right: 80px;
           margin-left: 80px;
-          margin-bottom: 110px;
+          margin-bottom: 170px;
         }
         }
         @media only screen and (max-width: 400px) and (min-width: 375px) {
           .App-login-page {
-            margin-left: 2px;
-          }
+            margin-top: 8px;
+            height: 450px;
+          }  
           .right-side {
             height: 50%;
             width: 55%;
-            top: -15%;
           }
           .right {
-            top: -14%;
-            margin-right: 195px;
+            top: -10px;
+            margin-right: 175px;
           }
           .left {
-            top: -14%;
+            top: -10px;
             margin-right: -30px;
+          }
+          .left:hover {
+            margin-right: -30px;
+          }
+          .right:hover {
+            margin-right: 190px;
           }
           .text-swipe {
             font-size: 21px;
             font-weight: 500px;
             color: #fff;
-            margin-right: 80px;
+            margin-right: 70px;
             margin-left: 80px;
-            margin-bottom: 110px;
+            margin-bottom: 160px;
           }
-          }
-  
+}
         @media only screen and (max-width: 500px) and (min-width: 401px) {
           .App-login-page {
-            margin-left: 2px;
+            height: 450px;
+            margin-top: 8px;
           }
           .right-side {
             height: 50%;
             width: 50%;
-            top: -15%;
           }
           .right {
-            top: -14%;
+            top:-10px;
             margin-right: 200px;
           }
           .right:hover {
-            top: -14%;
+            top:-10px;
             margin-right: 220px;
           }
           .left {
-            top: -14%;
+            top:-10px;
             margin-right: -20px;
           }
           .left:hover {
-            top: -14%
+            top:-10px;
           }
           .text-swipe {
             font-size: 21px;
@@ -264,26 +265,25 @@
             color: #fff;
             margin-right: 70px;
             margin-left: 70px;
-            margin-bottom: 110px;
+            margin-bottom: 160px;
           }
           }
           @media only screen and (max-width: 820px) and (min-width: 501px) {
             .App-login-page {
-              margin-top: 20px;
+              height: 400px;
             }
             .right-side {
-              right: -20%;
+              right: -15%;
+              height: 80%;;
             }
               .right {
                 right: -15%;
-                align-items: flex-end;
               }
               .right:hover {
-                  right: -15%;
+                right: -15%;
               }
               .left {
-                right: 20%;
-                align-items: flex-start;
+                right: -15%;
               }
               .left:hover {
                   right: 15%;
@@ -297,11 +297,9 @@
                 }
             }
 @media only screen and (max-width: 830px) and (min-width: 821px) {
-              .App-login-page {
-                margin-top: 10px;
-              }
               .right-side {
                 right: -20%;
+                height: 80%;
               }
                 .right {
                   right: -21%;
@@ -323,8 +321,13 @@
                     margin-right: 10px;
                     margin-left: 10px;
                   }
-              }
-  
+                }
+                @media only screen  and (min-width: 1000px) { 
+                  .App-login-page {
+                    margin-top: 30px;
+                  }
+                }
+
   
   
   

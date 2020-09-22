@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './TheLatestReleases.css'
+import './TheLatestReleases.css';
+import { Link } from "react-router-dom";
+
 
 class TheLatestReleases extends Component {
     state = {
@@ -44,7 +46,12 @@ render(){
         {items.map(item => (
           <div className='render-movies-latest-releases' key={item._id}>
             <div className='movies-latest-releases'>
-              <img onClick={console.log('click')} src={item.Poster} alt='poster' className='poster-latest-releases'/>
+            <Link
+            to={`/movie/${item._id}`}
+            key={item._id}
+            style={{ textDecoration: "none" }}>
+            <img onClick={console.log('click')} src={item.Poster} alt='poster' className='poster-latest-releases'/>
+          </Link>
             </div>
             <div className='p-desc-latest-releases'>
               <p className='desc-movie-latest-releases' key={item._id}>

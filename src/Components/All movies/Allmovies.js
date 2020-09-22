@@ -16,7 +16,7 @@ class Allmovies extends React.Component {
     this.loadMore = this.loadMore.bind(this);
   }
   componentDidMount() {
-    fetch("https://movies-app-siit.herokuapp.com/movies?take=99999999&skip=7")
+    fetch("https://movies-app-siit.herokuapp.com/movies?take=99999999&skip=8")
       .then(res => res.json())
       .then(
         (result) => {

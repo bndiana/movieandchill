@@ -1,4 +1,6 @@
 import React from 'react';
+import Allmovies from './Allmovies';
+import { Link } from "react-router-dom";
 import './allmovies.css'
 
 class Popup extends React.Component {
@@ -36,12 +38,16 @@ handleAddMovie = () => {
               type: this.state.type
             }),
           })
-            .then((res) => res.json())
-            .then((json) => {
-              console.log(json);
-            });
+          .then((res) => {
+            if (res.ok) {
+              window.location.pathname = "/Allmovies";
+            }
+          })
+          .then((json) => {
+            console.log(json);
+        });
 }
-
+    
 render() {
     return (
         <div className='popup'>

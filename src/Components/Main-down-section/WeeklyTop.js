@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './WeeklyTop.css'
-
+import './WeeklyTop.css';
+import { Link } from "react-router-dom";
+// import MovieItem from "../MovieList/MovieItem";
 
 class WeeklyTop extends Component {
     state = {
@@ -45,7 +46,12 @@ render(){
         {items.map(item => (
           <div className='render-movies-weekly-top' key={item._id}>
             <div className='movies'>
-              <img src={item.Poster} alt='poster' className='poster-weekly-top'/>
+            <Link
+            to={`/movie/${item._id}`}
+            key={item._id}
+            style={{ textDecoration: "none" }}>
+            <img src={item.Poster} alt='poster' className='poster-weekly-top'/>
+          </Link>
             </div>
             <div className='p-desc'>
               <p className='desc-movie-weekly' key={item._id}>

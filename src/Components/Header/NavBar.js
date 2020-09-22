@@ -4,6 +4,7 @@ import clapperboard from './clapperboard.svg';
 import Searchbar from './Searchbar';
 import LoginButton from './LoginButton';
 import {Link} from "react-router-dom";
+// import Profile from './Profile';
 import "./../../App.css";
 
 export default class NavBar extends Component {
@@ -12,13 +13,15 @@ export default class NavBar extends Component {
             <div className='main-container'>
             <div className="App">
               <div className='img-container'>
-                <img className='theater' src={clapperboard} alt='batman'/>
+                <Link to='/' style={{ textDecoration: "none", marginTop: '10px' }}>
+                <img className='theater' src={clapperboard} alt='batman'/>                  
+                </Link>
                 <DropdownMenu />
                 <Searchbar />
-                <Link to='/Login' style={{ textDecoration: "none" }}>
+                <Link to='/Login' style={{ textDecoration: "none", marginTop: '20px' }}>
                   <LoginButton />                
                 </Link>
-
+                {/* <Profile /> */}
                </div>
             </div>
           </div>

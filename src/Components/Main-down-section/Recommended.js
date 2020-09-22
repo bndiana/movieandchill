@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Recommended.css';
+import { Link } from "react-router-dom";
+
 
 class Recommended extends Component {
     state = {
@@ -44,7 +46,12 @@ render(){
         {items.map(item => (
           <div className='render-movies-recommended' key={item._id}>
             <div className='movies-recommended'>
-              <img src={item.Poster} alt='poster' className='poster-recommended'/>
+            <Link
+            to={`/movie/${item._id}`}
+            key={item._id}
+            style={{ textDecoration: "none" }}>
+            <img src={item.Poster} alt='poster' className='poster-recommended'/>
+          </Link>
             </div>
             <div className='p-desc-recommended'>
               <p className='desc-movie-recommended' key={item._id}>

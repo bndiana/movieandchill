@@ -14,7 +14,7 @@ class Searchbar extends Component {
     }
     handleEnter = (event) => {
         if(event.key === "Enter"){
-            this.props.history.push(`/advance-search?Title=${this.state.search}`)
+            this.props.history.push(`/search?Title=${this.state.search}`)
         }
     }
 

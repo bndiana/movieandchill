@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ImgComponent.scss';
 
+
 class ImgComponent extends Component {
     state = {
         error: null,

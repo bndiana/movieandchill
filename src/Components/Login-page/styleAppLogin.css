@@ -296,7 +296,7 @@
                   margin-left: 10px;
                 }
             }
-            @media only screen and (max-width: 830px) and (min-width: 821px) {
+@media only screen and (max-width: 830px) and (min-width: 821px) {
               .App-login-page {
                 margin-top: 10px;
               }

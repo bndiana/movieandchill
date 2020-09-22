@@ -4,7 +4,6 @@ import Comingsoon from '../Main-up-section/Comingsoon';
 import WeeklyTop from '../Main-down-section/WeeklyTop';
 import Recommended from '../Main-down-section/Recommended';
 import TheLatestReleases from '../Main-down-section/TheLatestReleases';
-import {BrowserRouter as Router} from "react-router-dom";
 import './Home.css';
 
 export default class Home extends Component {

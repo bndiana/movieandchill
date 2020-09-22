@@ -2,8 +2,9 @@
     margin: auto;
     padding: 0;
     width: 400px;
-    height: 30px;
+    height: 40px;
     border: none;
+    border-radius: 30px;
     align-content: center;
     display: flex;
     outline: none;

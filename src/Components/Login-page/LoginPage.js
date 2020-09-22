@@ -2,11 +2,10 @@ import React from "react";
 import './styleLoginPage.css';
 import Loginimg from './login.svg';
 
-
 export class LoginPage extends React.Component {
     state = {
-        username: ' ',
-        password: ' '
+        username: '',
+        password: ''
     }
     handleLogin = () => {
         if (this.state.username === '' ||

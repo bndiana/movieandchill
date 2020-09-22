@@ -12,11 +12,13 @@ export class SignupPage extends React.Component {
     }
 
     handleSignup = () => {
-        if (this.state.firstName === '' || this.state.firstName === null ||
-            this.state.lastName === '' || this.state.lastName === null ||
-            this.state.username === '' || this.state.lastName === null ||
-            this.state.email === '' || this.state.email === null ||
-            this.state.password === '' || this.state.password) {
+        if (this.state.firstName === '' ||
+            this.state.lastName === '' ||
+            this.state.username === '' ||
+            this.state.email === '' ||
+            this.state.password === '') {
+            alert('Please complete all fields')
+            } else {
             fetch("https://movies-app-siit.herokuapp.com/auth/register", {
                 method: "POST",
                 mode: "cors",
@@ -36,10 +38,13 @@ export class SignupPage extends React.Component {
                 .then((json) => {
                     console.log(json);
                     localStorage.setItem("accessToken", json.accessToken);
+                    if (json.authenticated === true)
+                    alert("succes")
+                else
+                    alert(json.message)
                 });
-        } else {
-            alert('Please complete all fields')
-        }
+            }
+
     };
     handleSubmit = (e) => {
         e.preventDefault();

@@ -9,8 +9,8 @@ export class LoginPage extends React.Component {
         password: ' '
     }
     handleLogin = () => {
-        if (this.state.username !== '' || this.state.username !== null ||
-            this.state.password !== '' || this.state.password !== null) {
+        if (this.state.username === '' ||
+            this.state.password === '' ) {
             alert('Please complete all fields')
         } else {
             fetch("https://movies-app-siit.herokuapp.com/auth/login", {

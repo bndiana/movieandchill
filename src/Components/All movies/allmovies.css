@@ -1,5 +1,5 @@
 .allmovies-page-container {
-    margin-top: 70px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
 }
@@ -100,8 +100,8 @@
     position: fixed;
     overflow-y: scroll;
     width: 100%;  
-    height: 90%;
-    top: 170px;  
+    height: 70%;
+    top: 210px;  
     left: 0;  
     right: 0;  
     bottom: 0;  
@@ -183,6 +183,9 @@
 }
 
 @media only screen and (max-width: 500px) {
+    .allmovies-page-container {
+        margin-top: 0px;
+    }
     .render-allmovies {
         width: 250px;
         height: 300px;
@@ -199,7 +202,7 @@
     }
     .inner-popup {  
         width: 90%;
-        height: 70%;
+        height: 90%;
         margin-left: 20px; 
         margin-top: 10px;
       }
@@ -217,7 +220,7 @@
         padding: 5px 20px;
     }
     .popup {
-        top: 130px;
+        top: 160px;
     }
     .addmovie-popup-container {
         font-size: 25px;
@@ -230,9 +233,7 @@
           font-size: 15px;
           padding: 5px 10px;
         }
-        .allmovies-page-container {
-            margin-top: 50px;
-        }
+
 }
 @media only screen and (max-width: 569px) and (min-width: 501px) {
     .render-allmovies {
@@ -288,9 +289,6 @@
           font-size: 15px;
           padding: 5px 10px;
         }
-        .allmovies-page-container {
-            margin-top: 20px;
-        }
 }
 @media only screen and (max-width: 639px) and (min-width: 570px) {
     .title-allmovies-container {
@@ -341,11 +339,11 @@
           font-size: 15px;
           padding: 5px 10px;
         }
-        .allmovies-page-container {
-            margin-top: 20px;
-        }
 }
 @media only screen and (max-width: 650px) and (min-width: 640px) {
+    .allmovies-page-container {
+        margin-top: 0px;
+    }    
     .render-allmovies {
         width: 250px;
         height: 300px;
@@ -370,7 +368,7 @@
         width: 90%;
         height: 60%;
         margin-left: 20px; 
-        margin-top: 10px;
+        margin-top: 60px;
       }
       #close-popup-button {
         right: 5px;
@@ -398,9 +396,6 @@
           margin-left: 10px;
           font-size: 10px;
           padding: 5px 10px;
-        }
-        .allmovies-page-container {
-            margin-top: 20px;
         }
 }
 @media only screen and (max-width: 656px) and (min-width: 651px) {
@@ -510,7 +505,7 @@
             margin-top: 40px;
         }
 }
-@media only screen and (max-width: 1300px) and (min-width: 761px) {
+@media only screen and (max-width: 800px) and (min-width: 761px) {
     .title-allmovies-container {
         margin-left: 20px;
         font-size: 30px;

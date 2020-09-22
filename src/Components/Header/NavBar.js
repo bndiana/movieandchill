@@ -31,7 +31,7 @@ export default class NavBar extends Component {
                 <Searchbar />
                <Link to='/Login' style={{ textDecoration: "none", marginTop: '20px' }}>
                  {
-                   this.state.isLoggedIn ? <Profile/> : <LoginButton />  
+                   this.state.isLoggedIn ? <Profile /> : <LoginButton />  
                  }
                 </Link>           
                 

@@ -9,14 +9,11 @@ class DropdownMenu extends Component {
 
     render() {
         return (
-            <div className='dropdown-menu'>
-               {/* <p>Advance Search</p> */}
               <div className='dropdown-links'>
-                <Link to='/search' style={{ textDecoration: "none", marginTop: '15px' }}>
-                 <img className='menu' src={loupe} alt='loupe'/> 
+                <Link to='/search' style={{ textDecoration: "none"}}>
+                 <img className='menu' src={loupe} alt='loupe' style={{ textDecoration: "none", marginTop: "10px" }}/> 
                 </Link>
               </div>
-            </div>
         )
     }
 }

@@ -1,6 +1,9 @@
 import React from 'react';
 import './allmovies.css'
 import Popup from './popup'
+import MovieDetails from '../MovieDetails/MovieDetails'
+import { Link } from "react-router-dom";
+
 
 class Allmovies extends React.Component {
   constructor(props) {
@@ -62,14 +65,17 @@ class Allmovies extends React.Component {
                   closePopup={this.togglePopup.bind(this)}
                 />
                 : null
-              }              
-              </div>
+              }
+            </div>
           </div>
           <div className='allmovies-container'>
             {this.state.items.slice(0, this.state.visible).map(item => (
+              <Link to={`/movie/${item._id}`}
+              key={item._id}>
               <div className='render-allmovies' key={item._id}>
                 <img src={item.Poster} alt='poster' className='allmovies-poster' />
               </div>
+              </Link>
             ))}
           </div>
           <div>

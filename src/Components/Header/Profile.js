@@ -19,8 +19,7 @@ class Profile extends Component {
                         </Link>
                         <Link to='logout' className='third' style={{ textDecoration: "none" }}>
                             <h2>LogOut</h2> 
-                        </Link>
-                                               
+                        </Link>   
                     </div>
             </div>
         )

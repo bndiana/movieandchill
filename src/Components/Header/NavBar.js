@@ -4,10 +4,21 @@ import clapperboard from './clapperboard.svg';
 import Searchbar from './Searchbar';
 import LoginButton from './LoginButton';
 import {Link} from "react-router-dom";
-// import Profile from './Profile';
+import Profile from './Profile';
 import "./../../App.css";
 
 export default class NavBar extends Component {
+
+    state ={
+      isLoggedIn: localStorage.getItem("accessToken")
+    }
+
+    componentDidMount(){
+      window.addEventListener('storage', () => {
+        this.setState({isLoggedIn: localStorage.getItem('accessToken')})
+      })
+    }
+
     render() {
         return (
             <div className='main-container'>
@@ -18,10 +29,12 @@ export default class NavBar extends Component {
                 </Link>
                 <DropdownMenu />
                 <Searchbar />
-                <Link to='/Login' style={{ textDecoration: "none", marginTop: '20px' }}>
-                  <LoginButton />                
-                </Link>
-                {/* <Profile /> */}
+               <Link to='/Login' style={{ textDecoration: "none", marginTop: '20px' }}>
+                 {
+                   this.state.isLoggedIn ? <Profile/> : <LoginButton />  
+                 }
+                </Link>           
+                
                </div>
             </div>
           </div>

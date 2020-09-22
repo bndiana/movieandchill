@@ -19,9 +19,11 @@ class App extends Component {
 
   render(){
      return (
-       <Router>
+       <div className='app'>
+        <Router>
           <React.Fragment>
               <NavBar />
+              <div className='app-body'>
               <Route exact path='/' component={Home} />
               <Switch>
                 <Route exact path="/movie/:id" component={MovieDetails} />
@@ -29,10 +31,13 @@ class App extends Component {
                 <Route exact path="/search" component={GeneralSearch} />
                 <Route exact path='/Login' component={AppLogin} />
                 <Route exact path='/AllMovies' component={Allmovies} />
-             </Switch>
+             </Switch>                
+              </div>
               <Footer />              
           </React.Fragment>
-       </Router>
+       </Router>        
+       </div>
+
   );
 }
 }

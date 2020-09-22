@@ -11,7 +11,6 @@ export default class Home extends Component {
     render() {
         return (
             <div className='container-router'>
-              <Router >
                 <React.Fragment>
                   <div className='movies-container'>
                     <Toprating />
@@ -21,7 +20,6 @@ export default class Home extends Component {
                     <Recommended />             
                     <TheLatestReleases /> 
                 </React.Fragment>
-              </Router>
             </div>
         )
     }

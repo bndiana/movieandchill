@@ -12,6 +12,8 @@ import FavoritePage from "./Components/Favorites/FavoritePage";
 import MovieDetails from "./Components/MovieDetails/MovieDetails";
 import GeneralSearch from "./Components/GeneralSearch/GeneralSearch";
 import Home from './Components/Home/Home';
+import AppLogin from './Components/Login-page/AppLogin';
+import Allmovies from './Components/All movies/Allmovies';
 
 class App extends Component {
 
@@ -25,6 +27,8 @@ class App extends Component {
                 <Route exact path="/movie/:id" component={MovieDetails} />
                 <Route exact path="/favorite" component={FavoritePage} />
                 <Route exact path="/search" component={GeneralSearch} />
+                <Route exact path='/Login' component={AppLogin} />
+                <Route exact path='/AllMovies' component={Allmovies} />
              </Switch>
               <Footer />              
           </React.Fragment>

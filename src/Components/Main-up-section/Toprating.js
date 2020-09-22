@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './Toprating.css'
+import './Toprating.css';
+import { Link } from "react-router-dom";
+
 
 class Toprating extends Component {
       state = {
@@ -39,7 +41,12 @@ class Toprating extends Component {
           <h1 className='title-container'>Top Rating Movies</h1>
           {items.map(item => (
             <div className='render-movies' key={item._id}>
-              <img src={item.Poster} alt='poster' className='poster'/>
+               <Link
+            to={`/movie/${item._id}`}
+            key={item._id}
+            style={{ textDecoration: "none" }}>
+            <img src={item.Poster} alt='poster' className='poster'/>
+          </Link>
               <p className='movie-desc-top-rating' key={item._id}>
                  <span>Title:</span> {item.Title} <br/>
                  <span>Genre:</span> {item.Genre} <br/>

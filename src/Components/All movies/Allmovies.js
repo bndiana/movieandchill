@@ -1,7 +1,6 @@
 import React from 'react';
 import './allmovies.css'
 import Popup from './popup'
-import MovieDetails from '../MovieDetails/MovieDetails'
 import { Link } from "react-router-dom";
 
 

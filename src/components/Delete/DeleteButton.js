@@ -18,8 +18,7 @@ class DeleteButton extends Component {
     )
       .then((res) => {
         if (res.ok) {
-          //Redirect
-          window.location = "https://www.facebook.com";
+          window.location.pathname = "/";
         } else {
           throw new Error("Something went wrong!");
         }

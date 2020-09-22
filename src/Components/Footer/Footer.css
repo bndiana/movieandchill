@@ -1,9 +1,9 @@
-.footer-container{
-    width: 100%;
-    background-color: lightgrey;
-    margin: 10px 0 0 0;
-    display: flex;
-    justify-content: space-around;
-    color: white;
-    background-color: black;
+.footer-container {
+  width: 100%;
+  background-color: lightgrey;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  background-color: black;
 }

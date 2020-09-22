@@ -24,15 +24,17 @@ html {
 .movie-title {
   margin-left: 10%;
   color: aliceblue;
+  font-size: 30px;
 }
 
 .movie-star {
   margin-left: auto;
-  padding: 10px;
+  padding: 30px;
 }
 
 .movie-poster {
   justify-content: center;
+  align-self: center;
 }
 
 .movie-poster img {
@@ -80,12 +82,15 @@ html {
 }
 
 .movie-button img {
-  width: 60px;
-  height: 20px;
+  width: 80px;
+  height: 40px;
 }
 
 .movie-button {
   padding: 5px;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
 }
 
 .movie-plot {
@@ -98,15 +103,14 @@ html {
   border-radius: 5%;
   text-align: center;
   padding: 15px;
-  width: 80%;
-  margin-left: 15%;
-  margin-right: 15%;
   margin-top: 90px;
   margin-bottom: 90px;
   width: 75%;
   height: 30%;
   color: #e6e3e3;
   font-size: 30px;
+  justify-content: center;
+  align-self: center;
 }
 
 .movie-more-details {
@@ -122,6 +126,7 @@ html {
     rgba(176, 172, 163, 1) 18%,
     rgba(63, 132, 150, 1) 83%
   );
+  font-size: 30px;
 }
 
 .movie-more-details p {
@@ -147,15 +152,22 @@ html {
   .movie-title {
     justify-content: center;
     align-self: center;
+    align-content: center;
+    text-align: center;
   }
 
-  .movie-poster img {
+  .movie-poster {
     justify-content: center;
-    width: 70%;
+    align-self: center;
+    align-content: center;
+  }
+  .movie-poster img {
+    width: 400px;
   }
 
   .movie-button-bar {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -181,6 +193,13 @@ html {
   .movie-button {
     padding: 5px;
     margin: 10px;
+    flex: 1;
+    background-color: #e6e3e3;
+    width: 70%;
+    border: 0;
+    border-radius: 3px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
   }
 
   .movie-plot {
@@ -196,6 +215,6 @@ html {
     width: 75%;
     height: 80%;
     color: #e6e3e3;
-    font-size: 22px;
+    font-size: 25px;
   }
 }

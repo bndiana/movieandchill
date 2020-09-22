@@ -149,7 +149,7 @@
         }
         .right {
           top: -3%;
-          margin-right: 130px;
+          margin-right: 140px;
         }
         .right:hover {
           top: -3%;
@@ -166,8 +166,8 @@
           font-size: 21px;
           font-weight: 500px;
           color: #fff;
-          margin-right: 70px;
-          margin-left: 80px;
+          margin-right: 60px;
+          margin-left: 60px;
           margin-bottom: 160px;
         }
         }

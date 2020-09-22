@@ -96,7 +96,7 @@
 }
 @media only screen and (max-width: 820px) and (min-width: 501px) {
     .container-loginpage {
-        height: 200px;
+        height: 350px;
         width: 350px;
     } 
     .field-login-page {
@@ -106,9 +106,26 @@
     .footer-button-login-page {
         margin-top: 10px;
     }
-    #signup-page-img, #login-page-img {
-        display: none;
+    .Account-loginpage {
+        margin-top: 10px;
+        width: 350px;
+        height: 150px;
     }
+
+}
+@media only screen and (max-width: 830px) and (min-width: 821px) {
+    .container-loginpage {
+        height: 350px;
+        width: 350px;
+    } 
+    .field-login-page {
+        margin-top: 0px;
+        height: 30px;
+    }
+    .footer-button-login-page {
+        margin-top: 10px;
+    }
+
     .Account-loginpage {
         margin-top: 10px;
         width: 350px;

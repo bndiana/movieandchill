@@ -223,7 +223,7 @@ class MovieDetails extends Component {
                 </p>
               )}
             </div>
-            <button onClick={this.dummyLogIn}>Log in</button>
+            {/* <button onClick={this.dummyLogIn}>Log in</button> */}
           </div>
         </React.Fragment>
       );

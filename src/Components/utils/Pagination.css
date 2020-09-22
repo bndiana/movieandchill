@@ -1,0 +1,16 @@
+.search-pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.pagination-counting {
+  display: flex;
+  justify-content: space-around;
+  letter-spacing: 10px;
+}
+
+.search-next-button {
+  margin-right: 10px;
+}

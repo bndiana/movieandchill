@@ -49,10 +49,28 @@ export class SignupPage extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
     }
-    handleChange = (e) => {
-        this.setState({ [e.target.id]: e.target.value })
+    handleChangeFirstName = (e) => {
+        this.setState({ firstName: e.target.value })
         // console.log(e.target.value);
     }
+    handleChangeLastName = (e) => {
+        this.setState({ lastName: e.target.value })
+        // console.log(e.target.value);
+    }
+    
+    handleChangeUsername = (e) => {
+        this.setState({ username: e.target.value })
+        // console.log(e.target.value);
+    }
+    handleChangeEmail = (e) => {
+        this.setState({ email: e.target.value })
+        // console.log(e.target.value);
+    }
+    handleChangePassword = (e) => {
+        this.setState({ password: e.target.value })
+        // console.log(e.target.value);
+    }
+
 
     render() {
         return (
@@ -65,23 +83,23 @@ export class SignupPage extends React.Component {
                     <div className="Account-loginpage">
                         <div className="Account-content-login-page">
                             <label htmlFor='FirstName'>First Name</label>
-                            <input id='firstName' className="field-login-page" type="FirstName" name='FirstName' placeholder="FirstName" onChange={this.handleChange}></input>
+                            <input id='firstName' className="field-login-page" type="FirstName" name='FirstName' placeholder="FirstName" onChange={this.handleChangeFirstName}></input>
                         </div>
                         <div className="Account-content-login-page">
                             <label htmlFor='LastName'>Last Name</label>
-                            <input id='LastName' className="field-login-page" type="LastName" name='LastName' placeholder="LastName" onChange={this.handleChange}></input>
+                            <input id='firstName' className="field-login-page" type="LastName" name='LastName' placeholder="LastName" onChange={this.handleChangeLastName}></input>
                         </div>
                         <div className="Account-content-login-page">
                             <label htmlFor='username'>Username</label>
-                            <input id='username' className="field-login-page" type="Username" name='Username' placeholder="Username" onChange={this.handleChange}></input>
+                            <input className="field-login-page" type="Username" name='Username' placeholder="Username" onChange={this.handleChangeUsername}></input>
                         </div>
                         <div className="Account-content-login-page">
                             <label htmlFor='email'>Email</label>
-                            <input id='email' className="field-login-page" type="Email" name='Email' placeholder="Email" onChange={this.handleChange}></input>
+                            <input className="field-login-page" type="Email" name='Email' placeholder="Email" onChange={this.handleChangeEmail}></input>
                         </div>
                         <div className="Account-content-login-page">
                             <label htmlFor='password'>Password</label>
-                            <input id='password' className="field-login-page" type="Password" name='Password' placeholder="Password" onChange={this.handleChange}></input>
+                            <input className="field-login-page" type="Password" name='Password' placeholder="Password" onChange={this.handleChangePassword}></input>
                         </div>
                     </div>
                 </div>

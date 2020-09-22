@@ -16,21 +16,27 @@ import AppLogin from "./Components/Login-page/AppLogin";
 import Allmovies from "./Components/All movies/Allmovies";
 
 class App extends Component {
-  render() {
-    return (
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/movie/:id" component={MovieDetails} />
-          <Route exact path="/favorite" component={FavoritePage} />
-          <Route exact path="/search" component={GeneralSearch} />
-          <Route exact path="/Login" component={AppLogin} />
-          <Route exact path="/AllMovies" component={Allmovies} />
-        </Switch>
-        <Footer />
-      </Router>
-    );
-  }
+render(){
+  return (
+    <div className='app'>
+     <Router>
+       <React.Fragment>
+           <NavBar />
+           <div className='app-body'>
+           <Route exact path='/' component={Home} />
+           <Switch>
+             <Route exact path="/movie/:id" component={MovieDetails} />
+             <Route exact path="/favorite" component={FavoritePage} />
+             <Route exact path="/search" component={GeneralSearch} />
+             <Route exact path='/Login' component={AppLogin} />
+             <Route exact path='/AllMovies' component={Allmovies} />
+          </Switch>                
+           </div>
+           <Footer />              
+       </React.Fragment>
+    </Router>        
+    </div>
+);
+}
 }
 export default App;

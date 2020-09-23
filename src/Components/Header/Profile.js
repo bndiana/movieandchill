@@ -16,16 +16,10 @@ class Profile extends Component {
           },
         };
         fetch(
-          'https://movies-app-siit.herokuapp.com/movies/auth/logout',
+          'https://movies-app-siit.herokuapp.com/auth/logout',
           logout
         ).then((res) =>{
-            console.log(res)
-            if (res.status !== 200) {
-                //Redirect
-                localStorage.removeItem("accessToken")
-              } else {
-                throw new Error("Something aaawent wrong!")
-              }
+            localStorage.removeItem("accessToken")
         }
    )}
 

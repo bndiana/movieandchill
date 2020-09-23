@@ -6,19 +6,22 @@
     height: auto;
     justify-content: space-between;
     border-radius: 30px;
-    -webkit-box-shadow: inset 0px 0px 27px 5px rgba(99,1,9,1);
-    -moz-box-shadow: inset 0px 0px 27px 5px rgba(99,1,9,1);
-    box-shadow: inset 0px 0px 27px 5px rgba(99,1,9,1);
+    -webkit-box-shadow: 0px 0px 0px 0px rgb(36, 76, 87);
+    -moz-box-shadow: 0px 0px 0px 0px rgb(36, 76, 87);
+    box-shadow: 0px 5px 5px 0px rgb(36, 76, 87);
 }
+
 .render-movies-weekly-top{
     width: 100%;
     margin-left: 20px;
 }
+
 .movies{
     margin-left: 6px;
     margin-top: 5px;
     margin-bottom: 20px;
 }
+
 .desc-movie-weekly{
     position: initial;
     padding: 0;
@@ -28,10 +31,11 @@
 .poster-weekly-top{
     height: 400px;
     width: 284px;
-    -webkit-box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
-    -moz-box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
-    box-shadow: 0px 0px 13px 18px rgba(0,0,0,0.27);
+    -webkit-box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.27);
+    -moz-box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.27);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.27);
 }
+
 h1{
     display: block;
 }
@@ -48,24 +52,29 @@ and (max-device-width : 480px) {
         overflow: auto;
         justify-content: space-between;
     }
+
     .render-movies-weekly-top{
         width: 100%;
         margin: 10px 10px 10px 0;
         text-align-last: center;
     }
+
     .movies{
         margin-left: 0;
         margin-top: 5px;
         margin-bottom: 20px;
     }
+
     .desc-movie-weekly{
         margin-top: 5px;
     }
+
     .poster-weekly-top{
         height: 400px;
         width: 350px;
     }
 }
+
  .recommended-container{
         background-color: lightgrey;
         width: 100%;
@@ -75,19 +84,23 @@ and (max-device-width : 480px) {
         overflow: auto;
         justify-content: space-between;
     }
+
     .render-movies-recommended{
         width: 100%;
         margin: 10px 10px 10px 0;
         text-align-last: center;
     }
+
     .movies-recommended{
         margin-left: 0;
         margin-top: 5px;
         margin-bottom: 20px;
     }
+
     .desc-movie-recommended{
         margin-top: 5px;
     }
+
     .poster-recommended{
         height: 400px;
         width: 350px;
@@ -104,20 +117,24 @@ and (max-device-width : 480px) {
         overflow: auto;
         justify-content: space-between;
     }
+
     .render-movies-weekly-top{
         width: 100%;
         margin: 0;
         text-align-last: center;
         flex: 1 0 21%;
     }
+
     .movies{
         margin-top: 5px;
     }
+
     .poster-weekly-top{
         height: 400px;
         width: 350px;
     }
   }
+
 @media (min-width: 601px) and (max-width: 750px) {
     .weekly-top-container{
         background-color: lightgrey;
@@ -129,15 +146,18 @@ and (max-device-width : 480px) {
         overflow: auto;
         justify-content: space-between;
     }
+
     .render-movies-weekly-top{
         width: 100%;
         margin: 0;
         text-align-last: center;
         flex: 1 0 21%;
     }
+
     .movies{
         margin-top: 5px;
     }
+
     .poster-weekly-top{
         height: 300px;
         width: 254px;
@@ -155,15 +175,18 @@ and (max-device-width : 480px) {
         overflow: auto;
         justify-content: space-between;
     }
+
     .render-movies-weekly-top{
         width: 100%;
         margin: 0;
         text-align-last: center;
         flex: 1 0 21%;
     }
+
     .movies{
         margin-top: 5px;
     }
+
     .poster-weekly-top{
         height: 300px;
         width: 254px;
@@ -181,20 +204,24 @@ and (max-device-width : 480px) {
         overflow: auto;
         justify-content: space-between;
     }
+
     .render-movies-weekly-top{
         width: 100%;
         margin: 0;
         text-align-last: center;
         flex: 1 0 21%;
     }
+
     .movies{
         margin-top: 5px;
     }
+
     .poster-weekly-top{
         height: 380px;
         width: 300px;
     }
 }
+
   @media (min-width: 1025px) and (max-width: 1300px) {
     .weekly-top-container{
         background-color: lightgrey;
@@ -206,20 +233,24 @@ and (max-device-width : 480px) {
         overflow: auto;
         justify-content: space-between;
     }
+
     .render-movies-weekly-top{
         width: 100%;
         margin: 0;
         text-align-last: center;
         flex: 1 0 21%;
     }
+
     .movies{
         margin-top: 5px;
     }
+
     .poster-weekly-top{
         height: 440px;
         width: 360px;
     }
   }
+
   @media (min-width: 1301px) and (max-width: 1500px) {
     .weekly-top-container{
         background-color: lightgrey;
@@ -231,15 +262,18 @@ and (max-device-width : 480px) {
         overflow: auto;
         justify-content: space-between;
     }
+
     .render-movies-weekly-top{
         width: 100%;
         margin: 0;
         text-align-last: center;
         flex: 1 0 21%;
     }
+
     .movies{
         margin-top: 5px;
     }
+    
     .poster-weekly-top{
         height: 350px;
         width: 250px;

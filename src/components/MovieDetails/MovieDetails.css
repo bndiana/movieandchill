@@ -48,13 +48,7 @@ html {
   justify-content: space-between;
   text-align: center;
   margin: 20px;
-  background: rgb(191, 146, 108);
-  background: linear-gradient(
-    90deg,
-    rgba(191, 146, 108, 1) 0%,
-    rgba(176, 172, 163, 1) 37%,
-    rgba(63, 132, 150, 1) 100%
-  );
+  background-color: #e6e3e3;
 }
 
 .movie-characteritics-bar-square {
@@ -65,7 +59,8 @@ html {
 
 .movie-year,
 .movie-rating {
-  border-right: solid 2px aqua;
+  border-right: solid 2px #153740;
+  height: 25px;
 }
 
 .movie-numbers {
@@ -119,13 +114,7 @@ html {
   text-align: left;
   margin-top: 20px;
   margin-bottom: 0px;
-  background: rgb(191, 146, 108);
-  background: linear-gradient(
-    270deg,
-    rgba(191, 146, 108, 1) 0%,
-    rgba(176, 172, 163, 1) 18%,
-    rgba(63, 132, 150, 1) 83%
-  );
+  background-color: #e6e3e3;
   font-size: 30px;
 }
 

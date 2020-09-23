@@ -38,10 +38,12 @@ export class SignupPage extends React.Component {
                 .then((json) => {
                     console.log(json);
                     localStorage.setItem("accessToken", json.accessToken);
-                    if (json.authenticated === true)
-                    alert("succes")
-                else
-                    alert(json.message)
+                    if (json.authenticated === true) {
+                        window.location.pathname = "/";
+                    }
+                    else {
+                        alert(json.message)
+                    }
                 });
             }
 

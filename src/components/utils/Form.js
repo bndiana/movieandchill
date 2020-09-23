@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Form.css";
 
 export function Form(props) {
   const [data, setData] = useState(props.data);
+  useEffect(() => setData(props.data), [props]);
+
   return (
     <div className="form-container">
       <form className="form">
@@ -24,9 +26,12 @@ export function Form(props) {
           </label>
         ))}
       </form>
-      <button className="form-button" onClick={() => props.onSubmit(data)}>
-        {props.buttonInnerText}
-      </button>
+      <div>
+        {" "}
+        <button className="form-button" onClick={() => props.onSubmit(data)}>
+          {props.buttonInnerText}
+        </button>
+      </div>
     </div>
   );
 }

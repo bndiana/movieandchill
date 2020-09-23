@@ -38,9 +38,9 @@ class Profile extends Component {
                         <Link to='/favorite' className='second' style={{ textDecoration: "none" }}>
                             <h2>Favorites</h2>
                         </Link>
-                        <Link to='logout' className='third' style={{ textDecoration: "none" }}>
+                        {/* <Link to='logout' className='third' style={{ textDecoration: "none" }}> */}
                             <h2 onClick={this.LogOut}>LogOut</h2> 
-                        </Link>   
+                        {/* </Link>    */}
                     </div>
             </div>
         )

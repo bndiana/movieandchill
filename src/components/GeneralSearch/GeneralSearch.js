@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form } from "../utils/Form.js";
 import MovieList from "../MovieList/MovieList.js";
 import Pagination from "../utils/Pagination";
+import './GeneralSearch.css'
 const appendQuery = require("append-query");
 
 class GeneralSearch extends Component {

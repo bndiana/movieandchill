@@ -2,13 +2,11 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  column-count: 3;
 }
 
 .form {
-  height: 10%;
-  display: flex;
-  justify-self: center;
-  align-self: center;
-  margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
 }

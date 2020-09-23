@@ -13,8 +13,7 @@ class Allmovies extends React.Component {
       visible: 12,
       showpopUp: false,
     };
-    this.loadMore = this.loadMore.bind(this);
-  }
+}
   componentDidMount() {
     fetch("https://movies-app-siit.herokuapp.com/movies?take=99999999&skip=8")
       .then(res => res.json())
@@ -63,7 +62,7 @@ class Allmovies extends React.Component {
                 <Popup
                   closePopup={this.togglePopup.bind(this)}
                 />
-                : null
+                :null
               }
             </div>
           </div>

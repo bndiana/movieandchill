@@ -9,7 +9,7 @@ class DropdownMenu extends Component {
 
     render() {
         return (
-              <div className='dropdown-links'>
+              <div className='dropdown-links' style={{ marginLeft: "30px"}}>
                 <Link to='/search' style={{ textDecoration: "none"}}>
                  <img className='menu' src={loupe} alt='loupe' style={{ textDecoration: "none", marginTop: "10px" }}/> 
                 </Link>

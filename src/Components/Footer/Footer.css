@@ -6,8 +6,25 @@
     display: flex;
     justify-content: space-around;
     color: white;
-    background-color: black;
+    background: rgb(110,110,110);
+    background: linear-gradient(180deg, rgba(110,110,110,1) 0%, rgba(0,0,0,1) 100%);
     bottom: 0;
     height: 50px;
     margin-top: auto;
+    font-family: 'Lora', serif;
+    font-size: 25px;
+}
+
+.footer-container p{
+    border-right: 2px solid white;
+}
+
+@media only screen
+and (min-device-width : 301px)
+and (max-device-width : 480px){
+    .footer-container p{
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 15px;
+    }
 }

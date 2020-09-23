@@ -1,10 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-// import Toprating from './Components/Main-up-section/Toprating';
-// import Comingsoon from './Components/Main-up-section/Comingsoon';
-// import WeeklyTop from './Components/Main-down-section/WeeklyTop';
-// import Recommended from './Components/Main-down-section/Recommended';
-// import TheLatestReleases from './Components/Main-down-section/TheLatestReleases';
 import Footer from "./Components/Footer/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./Components/Header/NavBar";

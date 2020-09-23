@@ -63,7 +63,7 @@ class GeneralSearch extends Component {
     }
   };
 
-  componentDidMount() {
+  doQuickSearch = () => {
     let urlParams = new URLSearchParams(this.props.location.search);
 
     let searchItem = { ...this.state.data };
@@ -73,6 +73,14 @@ class GeneralSearch extends Component {
     }
     this.setState({ data: searchItem });
     this.searchMovie(searchItem);
+  };
+
+  componentDidMount() {
+    this.doQuickSearch();
+  }
+
+  componentDidUpdate(prevProps) {
+    prevProps !== this.props && this.doQuickSearch();
   }
 
   render() {

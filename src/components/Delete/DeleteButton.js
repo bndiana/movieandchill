@@ -3,11 +3,18 @@ import { ReactComponent as Trash } from "../MovieDetails/svgs/trash.svg";
 import Cookies from "js-cookie";
 
 class DeleteButton extends Component {
+  handleDeleteFromFavorites = () => {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    favorites = favorites.filter((e) => e._id !== this.props.idForDelete);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  };
+
   deleteMovie = () => {
     const deleteMovie = {
       method: "DELETE",
       headers: {
-        "x-auth-token": Cookies.get("authToken"),
+        // "x-auth-token": Cookies.get("authToken"),
+        "x-auth-token": localStorage.getItem("accessToken"),
         "Content-Type": "application/json",
         Accept: "*/*",
       },
@@ -18,6 +25,7 @@ class DeleteButton extends Component {
     )
       .then((res) => {
         if (res.ok) {
+          this.handleDeleteFromFavorites();
           window.location.pathname = "/";
         } else {
           throw new Error("Something went wrong!");

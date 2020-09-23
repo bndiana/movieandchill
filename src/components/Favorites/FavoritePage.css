@@ -1,7 +1,6 @@
 .favorites-movie-page {
   display: flex;
   flex-direction: column;
-  font-family: "Open Sans", sans-serif;
 }
 
 .favorite-page-title {

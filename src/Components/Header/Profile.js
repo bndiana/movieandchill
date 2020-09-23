@@ -16,7 +16,7 @@ class Profile extends Component {
           },
         };
         fetch(
-          'https://movies-app-siit.herokuapp.com/movies/auth/logout',
+          'https://movies-app-siit.herokuapp.com/auth/logout',
           logout
         ).then((res) =>{
             console.log(res)

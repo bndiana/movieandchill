@@ -32,7 +32,7 @@ class Toprating extends Component {
   render(){
     const { error, isLoaded, items } = this.state;
     if (error) {
-      return <div>Error: dsfds</div>;
+      return <div>Error: something went wrong!</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {

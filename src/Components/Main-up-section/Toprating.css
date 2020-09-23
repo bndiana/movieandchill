@@ -1,7 +1,6 @@
 .top-rating-container{
-    background-color: grey;
+    background-image: linear-gradient( 109.6deg,  rgba(5,84,94,1) 16%, #bbb 91.1% );
     width: 35%;
-    /* display: flex; */
     margin-top: 30px;
     height: 833px;
     border-radius: 40px;

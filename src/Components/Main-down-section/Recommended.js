@@ -48,7 +48,6 @@ render(){
             <div className='movies-recommended'>
             <Link
             to={`/movie/${item._id}`}
-            key={item._id}
             style={{ textDecoration: "none" }}>
             <img src={item.Poster} alt='poster' className='poster-recommended'/>
           </Link>

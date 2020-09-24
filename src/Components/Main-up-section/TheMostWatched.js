@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './Toprating.css';
+import './TheMostWatched.css';
 import { Link } from "react-router-dom";
 
 
-class Toprating extends Component {
+class TheMostWatched extends Component {
       state = {
           error: null,
           isLoaded: false,
@@ -15,7 +15,6 @@ class Toprating extends Component {
         .then(res => res.json())
         .then(
           (result) => {
-            console.log(result)
             this.setState({
               isLoaded: true,
               items: result.results
@@ -38,12 +37,11 @@ class Toprating extends Component {
     } else {
       return (
         <div className='top-rating-container'>
-          <h1 className='title-container'>Top Rating Movies</h1>
+          <h1 className='title-container'>The Most Watched</h1>
           {items.map(item => (
             <div className='render-movies' key={item._id}>
                <Link
             to={`/movie/${item._id}`}
-            key={item._id}
             style={{ textDecoration: "none" }}>
             <img src={item.Poster} alt='poster' className='poster'/>
           </Link>
@@ -61,4 +59,4 @@ class Toprating extends Component {
     }
   }
 }
-export default Toprating;
+export default TheMostWatched;

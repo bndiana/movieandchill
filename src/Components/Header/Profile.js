@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import User from './user.svg';
 import {Link} from "react-router-dom";
-import './Profile.css'
-// import Allmovies from '../All movies/Allmovies';
-// import FavoritePage from "../Favorites/FavoritePage";
+import './Profile.css';
+import LoginButton from './LoginButton'
 
 class Profile extends Component {
     LogOut = () => {
@@ -18,8 +17,11 @@ class Profile extends Component {
         fetch(
           'https://movies-app-siit.herokuapp.com/auth/logout',
           logout
-        ).then((res) =>{
-            localStorage.removeItem("accessToken")
+        ).then(() =>{
+            localStorage.removeItem("accessToken");
+            return(
+                <LoginButton />
+            )
         }
    )}
 
@@ -34,9 +36,7 @@ class Profile extends Component {
                         <Link to='/favorite' className='second' style={{ textDecoration: "none" }}>
                             <h2>Favorites</h2>
                         </Link>
-                        {/* <Link to='logout' className='third' style={{ textDecoration: "none" }}> */}
-                            <h2 onClick={this.LogOut}>LogOut</h2> 
-                        {/* </Link>    */}
+                            <h2 onClick={this.LogOut} style={{cursor: "pointer"}}>LogOut</h2> 
                     </div>
             </div>
         )

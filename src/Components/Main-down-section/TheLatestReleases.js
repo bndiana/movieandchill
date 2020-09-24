@@ -16,7 +16,6 @@ class TheLatestReleases extends Component {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result)
           this.setState({
             isLoaded: true,
             items: result.results
@@ -48,7 +47,6 @@ render(){
             <div className='movies-latest-releases'>
             <Link
             to={`/movie/${item._id}`}
-            key={item._id}
             style={{ textDecoration: "none" }}>
             <img onClick={console.log('click')} src={item.Poster} alt='poster' className='poster-latest-releases'/>
           </Link>

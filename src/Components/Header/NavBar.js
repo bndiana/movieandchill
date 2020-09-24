@@ -15,6 +15,7 @@ export default class NavBar extends Component {
 
   componentDidMount() {
     window.addEventListener("storage", () => {
+      console.log(this.state.isLoggedIn, localStorage.getItem("accessToken"));
       this.setState({ isLoggedIn: localStorage.getItem("accessToken") });
     });
   }
@@ -43,7 +44,7 @@ export default class NavBar extends Component {
                 to="/Login"
                 style={{ textDecoration: "none", marginTop: "20px" }}
               >
-                <LoginButton />{" "}
+                <LoginButton />
               </Link>
             )}
           </div>

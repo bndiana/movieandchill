@@ -3,7 +3,6 @@ import "./MovieDetails.css";
 import { ReactComponent as Star } from "./svgs/star.svg";
 import { FavoriteButton } from "../Favorites/FavoriteButton";
 import DeleteButton from "../Delete/DeleteButton";
-import Cookies from "js-cookie";
 import { EditButton } from "../Edit/EditButton";
 import PopUpPage from "../utils/PopUpPage.js";
 import { Form } from "../utils/Form.js";
@@ -14,7 +13,6 @@ class MovieDetails extends Component {
     movie: null,
     errorMessage: null,
     isFavorited: false,
-    // loggedIn: Cookies.get("authToken"),
     loggedIn: localStorage.getItem("accessToken"),
     showingPopUp: false,
   };
@@ -60,22 +58,6 @@ class MovieDetails extends Component {
     }
   };
 
-  // dummyLogIn = () => {
-  //   const requestOptions = {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       username: "victor",
-  //       password: "victor",
-  //     }),
-  //   };
-  //   fetch("https://movies-app-siit.herokuapp.com/auth/login", requestOptions)
-  //     .then((response) => response.json())
-  //     .then((res) => {
-  //       Cookies.set("authToken", res.accessToken);
-  //     });
-  // };
-
   onPopUpClose = () => this.setState({ showingPopUp: false });
 
   onPopUpShow = () => this.setState({ showingPopUp: true });
@@ -108,7 +90,6 @@ class MovieDetails extends Component {
     const editMovie = {
       method: "PUT",
       headers: {
-        // "x-auth-token": Cookies.get("authToken"),
         "x-auth-token": localStorage.getItem("accessToken"),
         "Content-Type": "application/json",
         Accept: "*/*",

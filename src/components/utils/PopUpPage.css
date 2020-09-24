@@ -10,10 +10,11 @@
 
 .pop-up-content {
   margin: auto;
-  max-width: 70%;
-  max-height: 50%;
+  max-width: 90%;
+  max-height: 70%;
   justify-content: center;
   align-items: center;
+  overflow: scroll;
 }
 
 .close {

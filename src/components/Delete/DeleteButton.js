@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { ReactComponent as Trash } from "../MovieDetails/svgs/trash.svg";
-import Cookies from "js-cookie";
 
 class DeleteButton extends Component {
   handleDeleteFromFavorites = () => {
@@ -13,7 +12,6 @@ class DeleteButton extends Component {
     const deleteMovie = {
       method: "DELETE",
       headers: {
-        // "x-auth-token": Cookies.get("authToken"),
         "x-auth-token": localStorage.getItem("accessToken"),
         "Content-Type": "application/json",
         Accept: "*/*",

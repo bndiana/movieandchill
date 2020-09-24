@@ -186,7 +186,7 @@
     background-color: lightgrey;
     width: 100%;
     margin-left: 2px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     height: 500px;
     align-items: center;
     overflow: hidden;

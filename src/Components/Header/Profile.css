@@ -2,10 +2,9 @@
   position: relative;
   display: inline-block;
 }
-
-.user-profile {
-  width: 50px;
-  margin-top: 15px;
+.user-profile{
+    width: 50px;
+    margin-top: 15px;
 }
 
 h2 {

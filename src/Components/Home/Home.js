@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Toprating from '../Main-up-section/Toprating';
+import TheMostWatched from '../Main-up-section/TheMostWatched';
 import Comingsoon from '../Main-up-section/Comingsoon';
 import WeeklyTop from '../Main-down-section/WeeklyTop';
 import Recommended from '../Main-down-section/Recommended';
@@ -12,7 +12,7 @@ export default class Home extends Component {
             <div className='container-router'>
                 <React.Fragment>
                   <div className='movies-container'>
-                    <Toprating />
+                    <TheMostWatched />
                     < Comingsoon />
                   </div>
                     <WeeklyTop />

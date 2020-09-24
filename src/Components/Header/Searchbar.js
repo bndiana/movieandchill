@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import './Searchbar.css';
-// import ImgComponent from '../Main-up-section/ImgComponent'
 
 class Searchbar extends Component {
 

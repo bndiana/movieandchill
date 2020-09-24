@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './WeeklyTop.css';
 import { Link } from "react-router-dom";
-// import MovieItem from "../MovieList/MovieItem";
 
 class WeeklyTop extends Component {
     state = {
@@ -16,7 +15,6 @@ class WeeklyTop extends Component {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result)
           this.setState({
             isLoaded: true,
             items: result.results
@@ -48,7 +46,6 @@ render(){
             <div className='movies'>
             <Link
             to={`/movie/${item._id}`}
-            key={item._id}
             style={{ textDecoration: "none" }}>
             <img src={item.Poster} alt='poster' className='poster-weekly-top'/>
           </Link>

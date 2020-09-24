@@ -3,16 +3,16 @@ import "./allmovies.css";
 
 class Popup extends React.Component {
   state = {
-    title: "",
-    year: "",
-    runtime: "",
-    genre: "",
-    language: "",
-    country: "",
-    poster: "",
+    Title: "",
+    Year: "",
+    Runtime: "",
+    Genre: "",
+    Language: "",
+    Country: "",
+    Poster: "",
     imdbRating: "",
     imdbID: "",
-    type: "",
+    Type: "",
   };
   handleAddMovie = () => {
     fetch("https://movies-app-siit.herokuapp.com/movies", {
@@ -24,16 +24,16 @@ class Popup extends React.Component {
         "X-Auth-Token": localStorage.getItem("accessToken"),
       },
       body: JSON.stringify({
-        title: this.state.title,
-        year: this.state.year,
-        runtime: this.state.runtime,
-        genre: this.state.genre,
-        language: this.state.language,
-        country: this.state.country,
-        poster: this.state.poster,
+        Title: this.state.Title,
+        Year: this.state.Year,
+        Runtime: this.state.Runtime,
+        Genre: this.state.Genre,
+        Language: this.state.Language,
+        Country: this.state.Country,
+        Poster: this.state.Poster,
         imdbRating: this.state.imdbRating,
         imdbID: this.state.imdbID,
-        type: this.state.type,
+        Type: this.state.Type,
       }),
     })
       .then((res) => {
@@ -45,7 +45,36 @@ class Popup extends React.Component {
         console.log(json);
       });
   };
-
+handleChangeTitle=(e)=>{
+  this.setState({Title:e.target.value});
+}
+handleChangeYear = (e) => {
+  this.setState({ Year: e.target.value });
+}
+handleChangeRuntime = (e) => {
+  this.setState({ Runtime: e.target.value });
+}
+handleChangeGenre = (e) => {
+  this.setState({ Genre: e.target.value });
+}
+handleChangeLanguage = (e) => {
+  this.setState({ Language: e.target.value });
+}
+handleChangeCountry = (e) => {
+  this.setState({ Country: e.target.value });
+}
+handleChangePoster = (e) => {
+  this.setState({ Poster: e.target.value });
+}
+handleChangeImdbRating=(e)=>{
+  this.setState({imdbRating:e.target.value});
+}
+handleChangeImdbID = (e) => {
+  this.setState({imdbID: e.target.value });
+}
+handleChangeType = (e) => {
+  this.setState({ Type: e.target.value });
+}
   render() {
     return (
       <div className="popup">
@@ -58,9 +87,10 @@ class Popup extends React.Component {
             <label>Title</label>
             <input
               className="addmovie-popup-field"
-              type="title"
+              type="Title"
               name="title"
               placeholder="title"
+              onChange={this.handleChangeTitle}
             ></input>
           </div>
           <div className="addmovie-popup-container">
@@ -70,6 +100,7 @@ class Popup extends React.Component {
               type="year"
               name="year"
               placeholder="year"
+              onChange={this.handleChangeYear}
             ></input>
           </div>
           <div className="addmovie-popup-container">
@@ -79,6 +110,7 @@ class Popup extends React.Component {
               type="runtime"
               name="runtime"
               placeholder="runtime"
+              onChange={this.handleChangeRuntime}
             ></input>
           </div>
           <div className="addmovie-popup-container">
@@ -88,6 +120,7 @@ class Popup extends React.Component {
               type="genre"
               name="genre"
               placeholder="genre"
+              onChange={this.handleChangeGenre}
             ></input>
           </div>
           <div className="addmovie-popup-container">
@@ -97,6 +130,7 @@ class Popup extends React.Component {
               type="language"
               name="language"
               placeholder="language"
+              onChange={this.handleChangeLanguage}
             ></input>
           </div>
           <div className="addmovie-popup-container">
@@ -106,6 +140,7 @@ class Popup extends React.Component {
               type="country"
               name="country"
               placeholder="country"
+              onChange={this.handleChangeCountry}
             ></input>
           </div>
           <div className="addmovie-popup-container">
@@ -115,6 +150,7 @@ class Popup extends React.Component {
               type="poster"
               name="poster"
               placeholder="poster"
+              onChange={this.handleChangePoster}
             ></input>
           </div>
           <div className="addmovie-popup-container">
@@ -124,15 +160,7 @@ class Popup extends React.Component {
               type="imdbRating"
               name="imdbRating"
               placeholder="imdbRating"
-            ></input>
-          </div>
-          <div className="addmovie-popup-container">
-            <label>imdbVotes</label>
-            <input
-              className="addmovie-popup-field"
-              type="imdbVotes"
-              name="imdbVotes"
-              placeholder="imdbVotes"
+              onChange={this.handleChangeImdbRating}
             ></input>
           </div>
           <div className="addmovie-popup-container">
@@ -142,6 +170,7 @@ class Popup extends React.Component {
               type="imdbID"
               name="imdbID"
               placeholder="imdbID"
+              onChange={this.handleChangeImdbID}
             ></input>
           </div>
           <div className="addmovie-popup-container">
@@ -151,6 +180,7 @@ class Popup extends React.Component {
               type="type"
               name="type"
               placeholder="type"
+              onChange={this.handleChangeType}
             ></input>
           </div>
         </div>

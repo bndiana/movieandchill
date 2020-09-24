@@ -36,8 +36,7 @@ render(){
     return <div>Error: dsfds</div>;
   } else if (!isLoaded) {
     return <div>Loading...</div>;
-  } else { 
-    console.log(items, this.props.index)
+  } else {
     return (
         <div>
           <h1>The Latest Released</h1>
@@ -48,7 +47,7 @@ render(){
             <Link
             to={`/movie/${item._id}`}
             style={{ textDecoration: "none" }}>
-            <img onClick={console.log('click')} src={item.Poster} alt='poster' className='poster-latest-releases'/>
+            <img src={item.Poster} alt='poster' className='poster-latest-releases'/>
           </Link>
             </div>
             <div className='p-desc-latest-releases'>

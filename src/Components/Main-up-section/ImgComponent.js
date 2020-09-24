@@ -35,7 +35,6 @@ render(){
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else { 
-    console.log(items, this.props.index)
     return (
       <div className='coming-soon-movie-container'>
         {items.slice(this.props.index, this.props.index + 3).map(item => (

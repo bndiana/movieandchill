@@ -36,7 +36,6 @@ render(){
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else { 
-    console.log(items, this.props.index)
     return (
         <div>
           <h1>Weekly Top</h1>

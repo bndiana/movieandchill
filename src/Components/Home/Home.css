@@ -1,183 +1,195 @@
-.container-router{
-  background: rgb(63, 132, 150);
-  background: linear-gradient(
-    112deg,
-    rgba(63, 132, 150, 1) 17%,
-    rgba(203, 201, 201, 1) 65%
-  );
-    padding: 0 100px;
-    margin: 0;
+.container-router {
+  background-color: #e6e3e3;
+  padding: 0 100px;
+  margin: 0;
 }
 
 .main-container {
+  width: 100%;
+  background: rgb(63, 132, 150);
+  background: linear-gradient(
+    112deg,
+    rgba(63, 132, 150, 1) 32%,
+    rgba(36, 76, 87, 1) 78%
+  );
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.App {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.theater {
+  width: 60px;
+  height: 60px;
+}
+
+.menu {
+  width: 20px;
+  padding-top: 20px;
+}
+
+.img-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.movies-container {
+  display: flex;
+  width: 100%;
+}
+
+@media only screen and (min-device-width: 301px) and (max-device-width: 480px) {
+  .movies-container {
+    display: block;
     width: 100%;
-    background-image: linear-gradient( 109.6deg,  rgba(44,83,131,1) 18.9%, rgba(95,175,201,1) 91.1% );
-    display: flex;
-    justify-content: space-around;
   }
-  .App {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-around;
+
+  body {
+    margin: 0;
+    padding: 0;
   }
-  
-  .theater{
-    width: 60px;
-    height: 60px;
-  }
-  .menu{
+
+  .theater {
     width: 60px;
     height: 60px;
     margin: auto 0;
   }
-  .img-container{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-  }
-  .movies-container{
-    display: flex;
-    width: 100%;
-  }
-  @media only screen
-  and (min-device-width : 301px)
-  and (max-device-width : 480px){
-    .movies-container{
-      display: block;
-      width: 100%;
-    }
-    body{
-      margin: 0;
-      padding: 0;
-    }
-    .theater{
-      width: 60px;
-      height: 60px;
-      margin: auto 0;
-    }
-    .menu{
-      width: 60px;
-      height: 60px;
-      margin: auto 0;
-    }
-  }
-  @media (min-width: 481px) and (max-width: 600px){
-    .movies-container{
-      display: block;
-      width: 100%;
-    }
-    .theater{
-      width: 40px;
-      height: 50px;
-      margin: auto 0;
-    }
-    .menu{
-      width: 40px;
-      height: 50px;
-      margin: auto 0;
-    }
-  }
-  
-  @media (min-width:601px) and (max-width: 760px) {
-    .movies-container{
-      display: block;
-      width: 100%;
-    }
-    .theater{
-      width: 40px;
-      height: 50px;
-      margin: auto 0;
-    }
-    .menu{
-      width: 40px;
-      height: 50px;
-      margin: auto 0;
-    }
-  }
-  
-  @media (min-width:761px) and (max-width: 900px) {
-    .movies-container{
-      display: block;
-      width: 100%;
-    }
-    .theater{
-      width: 40px;
-      height: 50px;
-      margin: auto 0;
-    }
-    .menu{
-      width: 40px;
-      height: 50px;
-      margin: auto 0;
-    }
-    .container-router{
-        padding: 0 60px;
-    }
-  }
-  @media (min-width:901px) and (max-width: 1100px) {
-    .movies-container{
-      display: block;
-      width: 100%;
-    }
-    .theater{
-      width: 40px;
-      height: 50px;
-      margin: auto 0;
-    }
-    .menu{
-      width: 40px;
-      height: 50px;
-      margin: auto 0;
-    }
-    .container-router{
-      padding: 0 60px;
-  }
-  }
-  @media (min-width: 1101px) and (max-width: 1300px) {
-    .movies-container{
-      display: block;
-      width: 100%;
-    }
-    .theater{
-      width: 40px;
-      height: 50px;
-      margin: auto 0;
-    }
-    .menu{
-      width: 40px;
-      height: 50px;
-      margin: auto 0;
-    }
-  }
-  @media (min-width: 1301px) and (max-width: 1400px) {
-    .movies-container{
-      display: block;
-      width: 100%;
-    }
-  }
 
-
-
-@media only screen
-and (min-device-width : 301px)
-and (max-device-width : 480px){
-    .container-router{
-        padding-right: 20px;
-        padding-left: 20px;
+  .menu {
+    width: 20px;
+    padding-top: 20px;
   }
 }
 
 @media (min-width: 481px) and (max-width: 600px) {
-    .container-router{
-    padding-right: 20px;
-    padding-left: 20px;
-    }
+  .movies-container {
+    display: block;
+    width: 100%;
+  }
+
+  .theater {
+    width: 40px;
+    height: 50px;
+    margin: auto 0;
+  }
+
+  .menu {
+    width: 20px;
+    padding-top: 20px;
+  }
 }
 
-@media (min-width:601px) and (max-width: 760px) {
-    .container-router{
+@media (min-width: 601px) and (max-width: 760px) {
+  .movies-container {
+    display: block;
+    width: 100%;
+  }
+
+  .theater {
+    width: 40px;
+    height: 50px;
+    margin: auto 0;
+  }
+
+  .menu {
+    width: 20px;
+    padding-top: 20px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+  .movies-container {
+    display: block;
+    width: 100%;
+  }
+
+  .theater {
+    width: 40px;
+    height: 50px;
+    margin: auto 0;
+  }
+
+  .menu {
+    width: 20px;
+    padding-top: 20px;
+  }
+
+  .container-router {
+    padding: 0 60px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .movies-container {
+    display: block;
+    width: 100%;
+  }
+
+  .theater {
+    width: 40px;
+    height: 50px;
+    margin: auto 0;
+  }
+
+  .menu {
+    width: 20px;
+    padding-top: 20px;
+  }
+
+  .container-router {
+    padding: 0 60px;
+  }
+}
+
+@media (min-width: 1101px) and (max-width: 1300px) {
+  .movies-container {
+    display: block;
+    width: 100%;
+  }
+
+  .theater {
+    width: 40px;
+    height: 50px;
+    margin: auto 0;
+  }
+
+  .menu {
+    width: 20px;
+    padding-top: 20px;
+  }
+}
+
+@media (min-width: 1301px) and (max-width: 1400px) {
+  .movies-container {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 301px) and (max-device-width: 480px) {
+  .container-router {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .container-router {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 760px) {
+  .container-router {
     padding-right: 50px;
     padding-left: 50px;
-    }
+  }
 }

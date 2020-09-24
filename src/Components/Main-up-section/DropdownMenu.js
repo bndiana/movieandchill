@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import loupe from './loupe.svg';
 import {Link} from "react-router-dom";
 
-
-
 class DropdownMenu extends Component {
 
     render() {

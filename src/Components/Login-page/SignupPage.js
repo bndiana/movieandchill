@@ -12,11 +12,13 @@ export class SignupPage extends React.Component {
     }
 
     handleSignup = () => {
-        if (this.state.firstName === '' || this.state.firstName === null ||
-            this.state.lastName === '' || this.state.lastName === null ||
-            this.state.username === '' || this.state.lastName === null ||
-            this.state.email === '' || this.state.email === null ||
-            this.state.password === '' || this.state.password) {
+        if (this.state.firstName === '' ||
+            this.state.lastName === '' ||
+            this.state.username === '' ||
+            this.state.email === '' ||
+            this.state.password === '') {
+            alert('Please complete all fields')
+            } else {
             fetch("https://movies-app-siit.herokuapp.com/auth/register", {
                 method: "POST",
                 mode: "cors",
@@ -36,22 +38,41 @@ export class SignupPage extends React.Component {
                 .then((json) => {
                     console.log(json);
                     localStorage.setItem("accessToken", json.accessToken);
+                    if (json.authenticated === true) {
+                        window.location.pathname = "/";
+                    }
+                    else {
+                        alert(json.message)
+                    }
                 });
-        } else {
-            alert('Please complete all fields')
-        }
+            }
+
     };
     handleSubmit = (e) => {
         e.preventDefault();
     }
-    handleChange = (e) => {
+    handleChangeFirstName = (e) => {
         this.setState({ firstName: e.target.value })
+        // console.log(e.target.value);
+    }
+    handleChangeLastName = (e) => {
         this.setState({ lastName: e.target.value })
+        // console.log(e.target.value);
+    }
+    
+    handleChangeUsername = (e) => {
         this.setState({ username: e.target.value })
+        // console.log(e.target.value);
+    }
+    handleChangeEmail = (e) => {
         this.setState({ email: e.target.value })
+        // console.log(e.target.value);
+    }
+    handleChangePassword = (e) => {
         this.setState({ password: e.target.value })
         // console.log(e.target.value);
     }
+
 
     render() {
         return (
@@ -64,23 +85,23 @@ export class SignupPage extends React.Component {
                     <div className="Account-loginpage">
                         <div className="Account-content-login-page">
                             <label htmlFor='FirstName'>First Name</label>
-                            <input className="field-login-page" type="FirstName" name='FirstName' placeholder="FirstName" onChange={this.handleChange}></input>
+                            <input id='firstName' className="field-login-page" type="FirstName" name='FirstName' placeholder="FirstName" onChange={this.handleChangeFirstName}></input>
                         </div>
                         <div className="Account-content-login-page">
                             <label htmlFor='LastName'>Last Name</label>
-                            <input className="field-login-page" type="LastName" name='LastName' placeholder="LastName" onChange={this.handleChange}></input>
+                            <input id='firstName' className="field-login-page" type="LastName" name='LastName' placeholder="LastName" onChange={this.handleChangeLastName}></input>
                         </div>
                         <div className="Account-content-login-page">
                             <label htmlFor='username'>Username</label>
-                            <input className="field-login-page" type="Username" name='Username' placeholder="Username" onChange={this.handleChange}></input>
+                            <input className="field-login-page" type="Username" name='Username' placeholder="Username" onChange={this.handleChangeUsername}></input>
                         </div>
                         <div className="Account-content-login-page">
                             <label htmlFor='email'>Email</label>
-                            <input className="field-login-page" type="Email" name='Email' placeholder="Email" onChange={this.handleChange}></input>
+                            <input className="field-login-page" type="Email" name='Email' placeholder="Email" onChange={this.handleChangeEmail}></input>
                         </div>
                         <div className="Account-content-login-page">
                             <label htmlFor='password'>Password</label>
-                            <input className="field-login-page" type="Password" name='Password' placeholder="Password" onChange={this.handleChange}></input>
+                            <input className="field-login-page" type="Password" name='Password' placeholder="Password" onChange={this.handleChangePassword}></input>
                         </div>
                     </div>
                 </div>

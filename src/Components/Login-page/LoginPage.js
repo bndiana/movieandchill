@@ -2,15 +2,14 @@ import React from "react";
 import './styleLoginPage.css';
 import Loginimg from './login.svg';
 
-
 export class LoginPage extends React.Component {
     state = {
-        username: ' ',
-        password: ' '
+        username: '',
+        password: ''
     }
     handleLogin = () => {
-        if (this.state.username !== '' || this.state.username !== null ||
-            this.state.password !== '' || this.state.password !== null) {
+        if (this.state.username === '' ||
+            this.state.password === '' ) {
             alert('Please complete all fields')
         } else {
             fetch("https://movies-app-siit.herokuapp.com/auth/login", {
@@ -29,10 +28,12 @@ export class LoginPage extends React.Component {
                 .then((json) => {
                     console.log(json);
                     localStorage.setItem("accessToken", json.accessToken);
-                    if (json.authenticated === true)
-                        alert("succes")
-                    else
+                    if (json.authenticated === true) {
+                        window.location.pathname = "/";
+                    }
+                    else {
                         alert(json.message)
+                    }
                 });
         }
     }

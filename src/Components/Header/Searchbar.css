@@ -1,7 +1,7 @@
 .search-bar {
   margin: auto;
   padding: 0;
-  width: 350px;
+  width: 300px;
   height: 30px;
   border: none;
   border-radius: 30px;
@@ -42,5 +42,10 @@
 @media (min-width: 601px) and (max-width: 750px) {
   .search-bar {
     width: 250px;
+  }
+}
+@media (min-width: 800px) {
+  .search-bar {
+    width: 500px;
   }
 }

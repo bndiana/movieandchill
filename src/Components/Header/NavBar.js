@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import DropdownMenu from "../Main-up-section/DropdownMenu";
-import clapperboard from "./clapperboard.svg";
 import Searchbar from "./Searchbar";
 import LoginButton from "./LoginButton";
 import { Link } from "react-router-dom";
 import Profile from "./Profile";
 import "./../../App.css";
-import movieandchill from "./movieandchill.png";
+import movieandchillPhoto from './movieandchill.png';
+
 
 export default class NavBar extends Component {
   state = {
@@ -24,15 +24,9 @@ export default class NavBar extends Component {
     return (
       <div className="main-container">
         <div className="App">
-          <img
-            src={movieandchill}
-            className="movie-and-chill-page"
-            alt="nothing"
-          />
-
           <div className="img-container">
-            <Link to="/" style={{ textDecoration: "none", marginTop: "10px" }}>
-              <img className="theater" src={clapperboard} alt="batman" />
+            <Link className='Logo-img-container' to="/" style={{ textDecoration: "none"}}>
+              <img className="theater" src={movieandchillPhoto} alt="batman" />
             </Link>
             <DropdownMenu />
             <Searchbar />
@@ -42,12 +36,12 @@ export default class NavBar extends Component {
             ) : (
               <Link
                 to="/Login"
-                style={{ textDecoration: "none", marginTop: "20px" }}
+                style={{ textDecoration: "none" }}
               >
                 <LoginButton />
               </Link>
             )}
-          </div>
+                        </div>
         </div>
       </div>
     );

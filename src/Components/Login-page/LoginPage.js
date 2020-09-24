@@ -28,10 +28,12 @@ export class LoginPage extends React.Component {
                 .then((json) => {
                     console.log(json);
                     localStorage.setItem("accessToken", json.accessToken);
-                    if (json.authenticated === true)
-                    window.location.pathname = "/Home";
-                    else
+                    if (json.authenticated === true) {
+                        window.location.pathname = "/";
+                    }
+                    else {
                         alert(json.message)
+                    }
                 });
         }
     }

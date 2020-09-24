@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form } from "../utils/Form.js";
 import MovieList from "../MovieList/MovieList.js";
 import Pagination from "../utils/Pagination";
+import './GeneralSearch.css'
 const appendQuery = require("append-query");
 
 class GeneralSearch extends Component {
@@ -63,7 +64,7 @@ class GeneralSearch extends Component {
     }
   };
 
-  componentDidMount() {
+  doQuickSearch = () => {
     let urlParams = new URLSearchParams(this.props.location.search);
 
     let searchItem = { ...this.state.data };
@@ -73,6 +74,14 @@ class GeneralSearch extends Component {
     }
     this.setState({ data: searchItem });
     this.searchMovie(searchItem);
+  };
+
+  componentDidMount() {
+    this.doQuickSearch();
+  }
+
+  componentDidUpdate(prevProps) {
+    prevProps !== this.props && this.doQuickSearch();
   }
 
   render() {

@@ -5,7 +5,14 @@ class LoginButton extends Component {
   render() {
     return (
       <div className="login">
-        <button className="login-btn">Login</button>
+        <button
+          className="login-btn"
+          onClick={() =>
+            localStorage.setItem("pathBeforeLogin", window.location.pathname)
+          }
+        >
+          Login
+        </button>
       </div>
     );
   }
